@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="echarts.min.js"></script>
+       <script src="map/js/china.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+
+option = {
+    tooltip: {
+        trigger: 'item',
+        formatter: '{b}'
+    },
+    title : {
+        text: '中国版图',
+        subtext: '一略而过也算征服',
+        left: 'center'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['周老师','韩总','山林','王教头','剑圣','沙头','沛志','阿昌','张弛','小黑']
+    },
+    series: [
+        {
+            name: '中国',
+            type: 'map',
+            mapType: 'china',
+            selectedMode : false,
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name:'广东', selected:true},
+                {name:'海南', selected:true},
+                {name:'广西', selected:true},
+                {name:'青海', selected:true},
+                {name:'陕西', selected:true},
+                {name:'北京', selected:true},
+                {name:'西藏', selected:true},
+                {name:'台湾', selected:true},
+                {name:'四川', selected:true}
+            ]
+        },
+        {
+            name: '韩总',
+            type: 'map'
+        },
+        {
+            name: '王教头',
+            type: 'map'
+        },
+        {
+            name: '沛志',
+            type: 'map'
+        },
+        {
+            name: '沙头',
+            type: 'map'
+        },
+        {
+            name: '剑圣',
+            type: 'map'
+        },
+        {
+            name: '张弛',
+            type: 'map'
+        },
+        {
+            name: '周老师',
+            type: 'map'
+        },
+        {
+            name: '山林',
+            type: 'map'
+        },
+        {
+            name: '阿昌',
+            type: 'map'
+        }
+    ]
+};
+
+if (option && typeof option === "object") {
+    var startTime = +new Date();
+    myChart.setOption(option, true);
+    var endTime = +new Date();
+    var updateTime = endTime - startTime;
+    console.log("Time used:", updateTime);
+}
+       </script>
+   </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MapReduce的工作原理-笔记 | ATCG.XYZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="To create the list of tasks to run, the job scheduler first retrieves the input splits computed by the JobClient from the shared filesystem.It then creates one map task for each split.
+事实上，当输入数据足够小的时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MapReduce的工作原理-笔记">
+<meta property="og:url" content="http://atcg.xyz/2011/12/20/MapReduce的工作原理-笔记/index.html">
+<meta property="og:site_name" content="ATCG.XYZ">
+<meta property="og:description" content="To create the list of tasks to run, the job scheduler first retrieves the input splits computed by the JobClient from the shared filesystem.It then creates one map task for each split.
+事实上，当输入数据足够小的时候">
+<meta property="og:updated_time" content="2016-04-29T09:21:30.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MapReduce的工作原理-笔记">
+<meta name="twitter:description" content="To create the list of tasks to run, the job scheduler first retrieves the input splits computed by the JobClient from the shared filesystem.It then creates one map task for each split.
+事实上，当输入数据足够小的时候">
+  
+    <link rel="alternative" href="/atom.xml" title="ATCG.XYZ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ATCG.XYZ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ATCG是我们骑行社的一面旗子，虽然已经下落不明，但它一定在远方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/cycling">Cycling</a>
+        
+          <a class="main-nav-link" href="/football">足球</a>
+        
+          <a class="main-nav-link" href="/doudou">Doudou</a>
+        
+          <a class="main-nav-link" href="/段子">段子</a>
+        
+          <a class="main-nav-link" href="/Myself">Change Myself</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://atcg.xyz"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MapReduce的工作原理-笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/12/20/MapReduce的工作原理-笔记/" class="article-date">
+  <time datetime="2011-12-20T17:29:30.000Z" itemprop="datePublished">2011-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MapReduce的工作原理-笔记
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>To create the list of tasks to run, the job scheduler first retrieves the input splits computed by the JobClient from the shared filesystem.It then creates one map task for each split.</p>
+<p>事实上，当输入数据足够小的时候，它会按照你设定的mapper数目来执行。</p>
+<p>Tasktrackers have a fixed number of slots for map tasks and for reduce tasks: for example, a tasktracker may be able to run two map tasks and two reduce tasks simultaneously. (The precise number depends on the number of cores and the amount of memory on the tasktracker; see “Memory” on page 254.) The default scheduler fills empty map task slots before reduce task slots, so if the tasktracker has at least one empty map task slot, the jobtracker will select a map task; otherwise, it will select a reduce task.</p>
+<p>？</p>
+<p>To choose a reduce task the jobtracker simply takes the next in its list of yet-to-be-run reduce tasks, since there are no data locality considerations.</p>
+<p>reducer不考虑本地化。</p>
+<p>For a map task, however, it takes account of the tasktracker’s network location and picks a task whose input split is as close as possible to the tasktracker. In the optimal case, the task is data-local, that is, running on the same node that the split resides on. Alternatively, the task may be rack-local: on the same rack, but not the same node, as the split.</p>
+<p>mapper会考虑数据的本地化。</p>
+<p>TaskRunner launches a new Java Virtual Machine (step 9) to run each task in (step 10), so that any bugs in the user-defined map and reduce functions don’t affect the tasktracker (by causing it to crash or hang, for example). It is however possible to reuse the JVM between tasks; see “Task JVM Reuse” on page 170.</p>
+<p>map和reduce都在JVM中运行</p>
+<p>When a task is running, it keeps track of its progress, that is, the proportion of the task completed. For map tasks, this is the proportion of the input that has been processed. For reduce tasks, it’s a little more complex, but the system can still estimate the proportion of the reduce input processed. It does this by dividing the total progress into three parts, corresponding to the three phases of the shuffle (see “Shuffle and Sort” on page 163). For example, if the task has run the reducer on half its input, then the task’s progress is ⅚, since it has completed the copy and sort phases (⅓ each) and is half way through the reduce phase (⅙).</p>
+<p>Shuffer和Sort占的比例这么多？</p>
+<p>Streaming里面用管道的时候，就没办法进行进度更新了。</p>
+<p>Setting the timeout to a value of zero disables the timeout, so long-running tasks are never marked as failed. In this case, a hanging task will never free up its slot, and over time there may be cluster slowdown as a result. This approach should therefore be avoided, and making sure that a task is reporting progress periodically will suffice (see “What Constitutes Progress in MapReduce?” on page 158).</p>
+<p>mapred.task.timeout=0，还是有很大的风险的</p>
+<p>If a Streaming process hangs, the tasktracker does not try to kill it (although the JVM that launched it will be killed), so you should take precautions to monitor for this scenario, and kill orphaned processes by some other means.</p>
+<p>这个还真的碰到好几次。不知道是不是叫做僵尸进程？</p>
+<p>For some applications it is undesirable to abort the job if a few tasks fail, as it may be possible to use the results of the job despite some failures. In this case, the maximum percentage of tasks that are allowed to fail without triggering job failure can be set for the job. Map tasks and reduce tasks are controlled independently, using the mapred.max.map.failures.percent and mapred.max.reduce.failures.percent properties.</p>
+<p>这个在项目投产的时候可以考虑设置一下。</p>
+<p>Failure of a tasktracker is another failure mode. If a tasktracker fails by crashing, or running very slowly, it will stop sending heartbeats to the jobtracker (or send them very infrequently). The jobtracker will notice a tasktracker that has stopped sending heartbeats (if it hasn’t received one for 10 minutes, configured via the mapred.task tracker.expiry.interval property, in milliseconds) and remove it from its pool of tasktrackers to schedule tasks on.</p>
+<p>？</p>
+<p>The jobtracker arranges for map tasks that were run and completed successfully on that tasktracker to be rerun if they belong to incomplete jobs, since their intermediate output residing on the failed tasktracker’s local filesystem may not be accessible to the reduce task. Any tasks in progress are also rescheduled.</p>
+<p>中文书貌似翻译的有点问题，这个的意思是tasktracker只要是未完成的job，map都要重跑。</p>
+<p>The Fair Scheduler aims to give every user a fair share of the cluster capacity over time. If a single job is running, it gets all of the cluster. As more jobs are submitted, free task slots are given to the jobs in such a way as to give each user a fair share of the cluster. A short job belonging to one user will complete in a reasonable time even while another user’s long job is running, and the long job will still make progress.</p>
+<p>Fair Scheduler 这么好的东西，之前一直都没有用过。很适合大规模集群投产使用。</p>
+<p>In many ways, the shuffle is the heart of MapReduce, and is where the “magic” happens.</p>
+<p>有没有这么牛？</p>
+<p>It is often a good idea to compress the map output as it is written to disk, since doing so makes it faster to write to disk, saves disk space, and reduces the amount of data to transfer to the reducer. By default the output is not compressed, but it is easy to enable by setting mapred.compress.map.output to true. The compression library to use is specified by mapred.map.output.compression.codec; see “Compression” on page 77 for more on compression formats.</p>
+<p>压缩倒是个好注意。</p>
+<p>The output file’s partitions are made available to the reducers over HTTP. The number of worker threads used to serve the file partitions is controlled by the tasktracker.http.threads property—this setting is per tasktracker, not per map task slot. The default of 40 may need increasing for large clusters running large jobs.</p>
+<p>没错，就是HTTP！</p>
+<p>split和partition</p>
+<p>split是map的输入，map溢写到硬盘时按照分区(partition)进行内排，partition这个值应该跟reducer_task的数目有关系，并得到一个溢写文件，map结束时对溢写文件进行合并，每个reduce在复制阶段，把属于自己partition的数据拷贝(copy phase)过来，在reducer开始执行时再把所有partition的数据再进行合并(sort phase)。</p>
+<p>Before it writes to disk, the thread first divides the data into partitions corresponding to the reducers that they will ultimately be sent to.</p>
+<p>Furthermore, the reduce task needs the map output for its particular partition from several map tasks across the cluster. The map tasks may finish at different times, so the reduce task starts copying their outputs as soon as each completes. This is known as the copy phase of the reduce task.</p>
+<p>复制阶段。map的输出到特定的分块好像是由一个哈希函数做的。</p>
+<p>The reduce task has a small number of copier threads so that it can fetch map outputs in parallel. The default is five threads, but this number can be changed by setting the mapred.reduce.parallel.copies property.</p>
+<p>map没结束，reduce的进度就开始有报告，就是这个原因。</p>
+<p>As map tasks complete successfully, they notify their parent tasktracker of the status update, which in turn notifies the jobtracker. These notifications are transmitted over the heartbeat communication mechanism described earlier. Therefore, for a given job, the jobtracker knows the mapping between map outputs and tasktrackers. A thread in the reducer periodically asks the jobtracker for map output locations until it has retrieved them all.</p>
+<p>Tasktrackers do not delete map outputs from disk as soon as the first reducer has retrieved them, as the reducer may fail. Instead, they wait until they are told to delete them by the jobtracker, which is after the job has completed.</p>
+<p>mapping是怎么做的？map跑完的数据要在job完成之后才删除？那中间数据不是很恐怖？</p>
+<p>The configuration property io.sort.factor controls the maximum number of streams to merge at once; the default is 10.</p>
+<p>据说这个值可以设到100。</p>
+<p>The number of files merged in each round is actually more subtle than this example suggests. The goal is to merge the minimum number of files to get to the merge factor for the final round. So if there were 40 files, the merge would not merge 10 files in each of the four rounds to get 4 files. Instead, the first round would merge only 4 files, and the subsequent three rounds would merge the full 10 files. The 4 merged files, and the 6 (as yet unmerged) files make a total of 10 files for the final round.</p>
+<p>合并的细节：意思是最后要留下十个文件，那就10个文件合并三次，剩下10个文件+3个大文件，所以第一次就先合并4个文件，可以减少写磁盘的数据。</p>
+<p>using exponential backoff</p>
+<p>类似QQ的超时重连，每次重连的时间间隔越来越长。</p>
+<p>The general principle is to give the shuffle as much memory as possible. However, there is a trade-off, in that you need to make sure that your map and reduce functions get enough memory to operate. This is why it is best to write your map and reduce functions to use as little memory as possible—certainly they should not use an unbounded amount of memory (by avoiding accumulating values in a map, for example).</p>
+<p>map和reduce函数应该尽量少用内存</p>
+<p>The amount of memory given to the JVMs in which the map and reduce tasks run is set by the mapred.child.java.opts property.</p>
+<p>多大啊？</p>
+<p>More generally, Hadoop’s uses a buffer size of 4 KB by default, which is low, so you should increase this across the cluster (by setting io.file.buffer.size, see also “Other Hadoop Properties” on page 264).</p>
+<p>有空试试！</p>
+<p>Speculative execution is an optimization, not a feature to make jobs run more reliably. If there are bugs that sometimes cause a task to hang or slow down, then relying on speculative execution to avoid these problems is unwise, and won’t work reliably, since the same bugs are likely to affect the speculative task. You should fix the bug so that the task doesn’t hang or slow down. mapred.reduce.tasks.speculative.execution</p>
+<p>我也很烦这个，关掉它。</p>
+<p>The property for controlling task JVM reuse is mapred.job.reuse.jvm.num.tasks: it specifies the maximum number of tasks to run for a given job for each JVM launched, the default is 1 (see Table 6-4). Tasks from different jobs are always run in separate JVMs. If the property is set to –1, there is no limit to the number of tasks from the same job that may share a JVM. The method setNumTasksToExecutePerJvm() on JobConf can also be used to configure this property.</p>
+<p>共享JVM能不能减少内存使用呢？</p>
+<p>Tasks that are CPU-bound may also benefit from task JVM reuse by taking advantage of runtime optimizations applied by the HotSpot JVM. After running for a while, the HotSpot JVM builds up enough information to detect performance-critical sections in the code, and dynamically translates the Java byte codes of these hot spots into native machine code. This works well for long-running processes, but JVMs that run for seconds or a few minutes may not gain the full benefit of HotSpot. In these cases, it is worth enabling task JVM reuse.</p>
+<p>Another place where a shared JVM is useful is for sharing state between the tasks of a job. By storing reference data in a static field, tasks get rapid access to the shared data.</p>
+<p>共享JVM，CPU密集型的程序有优势。</p>
+<p>Skipping mode is off by default; you enable it independently for map and reduce tasks using the SkipBadRecords class. It’s important to note that skipping mode can detect only one bad record per task attempt, so this mechanism is appropriate only for detecting occasional bad records (a few per task, say). You may need to increase the maximum number of task attempts (via mapred.map.max.attempts and mapred.reduce.max.attempts) to give skipping mode enough attempts to detect and skip all the bad records in an input split.</p>
+<p>Skipping模式的启动。对于跑任务来说，这个选项非常重要。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2011/12/20/MapReduce的工作原理-笔记/" data-id="ciofjl7yr002myg7tuwpp6qhb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2011/12/24/感觉快乐就忙东忙西/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          感觉快乐就忙东忙西
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/12/18/gcc编译问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">gcc编译问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annual-Review/">Annual Review</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doudou/">Doudou</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Family/">Family</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Movie/">Movie</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel/">Travel</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cgi/">cgi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/足球/">足球</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Annual-Review/" style="font-size: 20px;">Annual Review</a> <a href="/tags/Book/" style="font-size: 13.33px;">Book</a> <a href="/tags/Doudou/" style="font-size: 13.33px;">Doudou</a> <a href="/tags/Family/" style="font-size: 13.33px;">Family</a> <a href="/tags/Movie/" style="font-size: 16.67px;">Movie</a> <a href="/tags/Travel/" style="font-size: 13.33px;">Travel</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/cgi/" style="font-size: 10px;">cgi</a> <a href="/tags/足球/" style="font-size: 10px;">足球</a> <a href="/tags/骑行/" style="font-size: 10px;">骑行</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/20/Diamond-or-Code/">Want Diamond or Code ?</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/Interesting-Blogs/">Interesting Blogs</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/16/迎着风的2015/">迎着风的2015</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/02/新西兰之行/">新西兰之行</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/06/Fernando-Montano/">Fernando Montaño</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Guti Gu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/cycling" class="mobile-nav-link">Cycling</a>
+  
+    <a href="/football" class="mobile-nav-link">足球</a>
+  
+    <a href="/doudou" class="mobile-nav-link">Doudou</a>
+  
+    <a href="/段子" class="mobile-nav-link">段子</a>
+  
+    <a href="/Myself" class="mobile-nav-link">Change Myself</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

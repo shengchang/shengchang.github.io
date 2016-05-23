@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ATCG.XYZ</title>
+  <subtitle>ATCG是我们骑行社的一面旗子，虽然已经下落不明，但它一定在远方</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://atcg.xyz/"/>
+  <updated>2016-05-20T10:01:26.086Z</updated>
+  <id>http://atcg.xyz/</id>
+  
+  <author>
+    <name>Guti Gu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Want Diamond or Code ?</title>
+    <link href="http://atcg.xyz/2016/05/20/Diamond-or-Code/"/>
+    <id>http://atcg.xyz/2016/05/20/Diamond-or-Code/</id>
+    <published>2016-05-20T09:45:05.000Z</published>
+    <updated>2016-05-20T10:01:26.086Z</updated>
+    
+    <content type="html">&lt;div id=&quot;echarts783&quot; style=&quot;width: 81%;height: 400px;margin: 0 auto&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById(&#39;echarts783&#39;));
+
+        // 指定图表的配置项和数据
+        var option = {
+    title: {
+        text: &#39;Sequencing Our Life&#39;,
+        subtext: &#39;A present for celebrate 3rd anniversary of marriage&#39;,
+        sublink: &#39;http://atcg.xyz&#39;
+    },
+    tooltip : {
+        trigger: &#39;axis&#39;,
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : &#39;shadow&#39;        // 默认为直线，可选为：&#39;line&#39; | &#39;shadow&#39;
+        }
+    },
+    grid: {
+        top: 80,
+        bottom: 30
+    },
+    xAxis: {
+        type : &#39;value&#39;,
+        position: &#39;top&#39;,
+        splitLine: {lineStyle:{type:&#39;dashed&#39;}},
+    },
+    yAxis: {
+        type : &#39;category&#39;,
+        axisLine: {show: false},
+        axisLabel: {show: false},
+        axisTick: {show: false},
+        splitLine: {show: false},
+        data : [
+            &#39;1970-01-01 We are bricks&#39;,
+            &#39;2013-03-17 We are more than friends&#39;,
+            &#39;2013-05-17 Propose marriage&#39;,
+            &#39;2013-05-20 Register for marriage&#39;,
+            &#39;2014-01-07 Get our baby Doudou&#39;,
+            &#39;2014-09-13 Doudou get the inguinal hernia&#39;,
+            &#39;2015-07-19 Move into our new apartment&#39;,
+            &#39;2016-05-20 3rd wedding anniversary&#39;
+        ]
+    },
+    series : [
+        {
+            name:&#39;Happy Value&#39;,
+            type:&#39;bar&#39;,
+            //stack: &#39;总量&#39;,
+            label: {
+                normal: {
+                    show: true,
+                    position:&#39;left&#39;,
+                    formatter: &#39;{b}&#39;
+                }
+                
+            },
+            data:[
+                {value: -1, label: { normal: { position: &#39;right&#39; }}},
+                0.9,//{value: 0.9, label: labelRight},
+                0.8, 
+                0.7,
+                1,//{value: 1, label: labelRight},
+                {value:-0.8, label: { normal: { position: &#39;right&#39; }}},
+                0.6,//{value: 0.6, label: labelRight},
+                0.5
+            ]
+        }
+    ]
+};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+&lt;/script&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;div id=&quot;echarts783&quot; style=&quot;width: 81%;height: 400px;margin: 0 auto&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+        // 基于准备好的dom，初始化echart
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Interesting Blogs</title>
+    <link href="http://atcg.xyz/2016/05/09/Interesting-Blogs/"/>
+    <id>http://atcg.xyz/2016/05/09/Interesting-Blogs/</id>
+    <published>2016-05-09T09:57:27.000Z</published>
+    <updated>2016-05-09T10:00:30.094Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://nvie.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git大神&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://nvie.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git大神&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>迎着风的2015</title>
+    <link href="http://atcg.xyz/2016/02/16/%E8%BF%8E%E7%9D%80%E9%A3%8E%E7%9A%842015/"/>
+    <id>http://atcg.xyz/2016/02/16/迎着风的2015/</id>
+    <published>2016-02-16T06:47:45.000Z</published>
+    <updated>2016-04-29T09:21:30.297Z</updated>
+    
+    <content type="html">&lt;p&gt;2014年豆豆的出生，让我无暇环顾周遭世界，他是那一年的所有，如果有总结那都是跟他有关的。&lt;/p&gt;
+&lt;p&gt;2015年，我慢慢的开始恢复自己的生活，也试着逐步调整着人生的方向。&lt;/p&gt;
+&lt;p&gt;我还记得2013年总结中，希望能够在2014年置办些家底，但是在房价无情高攀的情况下，我们扑了个空。我跟丽丽下定决心，在2015年初一定要把这个事情做好，我们每周末都出去看房子，找中介找保安找网友，可是在330政策来了之后，我出差去了一趟美国，远在异国他乡，我妈妈告诉我房价又急剧攀升，房源几乎售罄。丽丽决定休个年假，独自带宝宝回山西住一段时间。那段时间，我好几次夜不能寐，仿佛觉得我们无法在深圳立足了，也不知道该去向何方。&lt;/p&gt;
+&lt;p&gt;在美国CG的日子，没有了老婆孩子的羁绊，顿时感觉很是自由，但也伴随着寂寞。我一个人骑着自行车从Moutain View到Half Moon Bay，骑了一小段一号公路，甚是孤独就匆匆而返。Steve带我们去了加州一个图书馆，我非常的喜欢，里面还有海贼王的英文漫画。我和Jason还去看勇士队的NBA比赛，Jason无情的在喧闹的球场睡着了，这还真是体现了那句，热闹都是他们的，而我什么都没有。在MV我和小伙伴们一起学习努力工作，我们都憧憬着那个叫做Omega的东西能带我们飞的更高更远，它后来改名叫做Revolocity，告诉人们它能带来速度(velocity)上的变革(revolution)，但现实终究残酷，不知道是因为跑的太快扯着蛋了，还是因为变的太快方向搞错了，在年底的时候宣布项目停止了，CG的几个老朋友都因此要去寻找新的东家。&lt;/p&gt;
+&lt;p&gt;从美国回来后，我很想念老婆和孩子，就匆匆地买了机票，准备跟老婆和孩子去会合。走之前，我和妈妈在周末又去看了房子，几乎没有房源了，听说旁边的新盘要加推，我抱着一点希望去认筹了一个，房子很贵，已经远远超出了我们承受的范围。&lt;/p&gt;
+&lt;p&gt;在五台山旁边的小村落里，我们白天早起晚上早睡，我跟宝宝每天在村里的街上遛弯，看着街上的老人和小孩，晒着和煦的阳光，静谧的生活似乎让我忘记了很多的烦恼，体重了也增加了不少。有一天中午，妈妈给我来电话，说有个业主要买房，房子很不错，就是价格有点贵，但能省点中介费，问我的意见。我犹豫了一会，妈妈说错过了这个房子可能就再也买不到了，钱的话只能再凑凑了。我说好，那就定下吧。妈妈叫我问丽丽的意思，我说不用了。这或许是我人生中最平静却又最重要的决定之一。&lt;/p&gt;
+&lt;p&gt;回深之后，签合同走贷款办各种手续，父母拿出了存款并卖掉了股票凑钱。因为宝宝的疝气一直需要特别的照顾，丽丽回来后就没上班了在家带孩子。7月19日，我们搬进了新家。&lt;/p&gt;
+&lt;p&gt;下半年的时候，奶奶来深圳和我们一块住，但终究她还是不习惯，春节后她就回去了。&lt;/p&gt;
+&lt;p&gt;30而立的时候，感谢丽丽给我带来了个支点。&lt;br&gt;31迎风启航的时候，感谢父母给了我们一个港湾。&lt;/p&gt;
+&lt;p&gt;回顾2015年，我有很多计划的事情没有实现。丽丽这两年带孩子很辛苦，我们只出去肇庆玩了一次，也没去电影院看过一场电影。她因为孩子耽误了工作，希望在2016能找个好工作。&lt;/p&gt;
+&lt;p&gt;2015年踢球逐步多了一些，但身体机能感觉下降的非常明显，大部分的外出都是亲子活动，希望能在新的一年加强锻炼。&lt;/p&gt;
+&lt;p&gt;2015年买了很多书，也看了一些，但总体上还有很多不足，希望能进一步加强，并形成自己的技术体系。在工作上，Yongwei作为大老板教会了我很多东西，他让我感觉到了一个职业领导该有的情商和做事方式，团队的几个小伙伴还算稳定，另外武汉也增加了3位小伙伴，希望能在2016年能做一些有趣的事情。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2014年豆豆的出生，让我无暇环顾周遭世界，他是那一年的所有，如果有总结那都是跟他有关的。&lt;/p&gt;
+&lt;p&gt;2015年，我慢慢的开始恢复自己的生活，也试着逐步调整着人生的方向。&lt;/p&gt;
+&lt;p&gt;我还记得2013年总结中，希望能够在2014年置办些家底，但是在房价无情高攀的情况下
+    
+    </summary>
+    
+    
+      <category term="Annual Review" scheme="http://atcg.xyz/tags/Annual-Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新西兰之行</title>
+    <link href="http://atcg.xyz/2016/02/02/%E6%96%B0%E8%A5%BF%E5%85%B0%E4%B9%8B%E8%A1%8C/"/>
+    <id>http://atcg.xyz/2016/02/02/新西兰之行/</id>
+    <published>2016-02-02T09:01:02.000Z</published>
+    <updated>2016-04-29T09:21:30.297Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744631/3e71f452-c9d0-11e5-9122-ed74780695dd.jpg&quot; alt=&quot;mmexport1454302179411&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744633/41496f02-c9d0-11e5-9547-91c3d4af0864.jpg&quot; alt=&quot;mmexport1454302187766&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744636/4401a516-c9d0-11e5-9c71-606547600304.jpg&quot; alt=&quot;mmexport1454302194210&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744639/48aab738-c9d0-11e5-8e34-0b266932b959.jpg&quot; alt=&quot;mmexport1454302205266&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744644/4d7c551e-c9d0-11e5-8279-814634325adb.jpg&quot; alt=&quot;mmexport1454302208745&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744645/4fac15e0-c9d0-11e5-88d3-f36100ed5c4e.jpg&quot; alt=&quot;mmexport1454302212127&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744650/53c65f00-c9d0-11e5-94ff-253f870a2cb2.jpg&quot; alt=&quot;mmexport1454302215446&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1668333/12744631/3e71f452-c9d0-11e5-9122-ed74780695dd.jpg&quot; alt=&quot;mmexport145430217941
+    
+    </summary>
+    
+    
+      <category term="骑行" scheme="http://atcg.xyz/tags/%E9%AA%91%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fernando Montaño</title>
+    <link href="http://atcg.xyz/2015/12/06/Fernando-Montano/"/>
+    <id>http://atcg.xyz/2015/12/06/Fernando-Montano/</id>
+    <published>2015-12-06T20:58:00.000Z</published>
+    <updated>2016-04-29T09:21:30.229Z</updated>
+    
+    <content type="html">&lt;p&gt;虽然没有见过他，我们工作接触也是仅有的几次培训，但我感觉他非常的优秀，是我和麦克共同认可的大神，可惜天妒英才。祝大神在天堂安好，如Steve所说,He will be missed.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1c1zoQgK&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://pan.baidu.com/s/1c1zoQgK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://d.pcs.baidu.com/thumbnail/d96f15265ee27d37c72e09695d99f5c0?fid=3053976615-250528-120159897907518&amp;amp;time=1449464400&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-W7EpUvJetPawSLjSK9WPoQ01Tqg%3D&amp;amp;rt=sh&amp;amp;expires=2h&amp;amp;r=4347    07459&amp;amp;sharesign=unknown&amp;amp;size=c710_u500&amp;amp;quality=100&quot; alt=&quot;Image of Fernando&quot;&gt;&lt;br&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然没有见过他，我们工作接触也是仅有的几次培训，但我感觉他非常的优秀，是我和麦克共同认可的大神，可惜天妒英才。祝大神在天堂安好，如Steve所说,He will be missed.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1c1zoQ
+    
+    </summary>
+    
+    
+      <category term="cgi" scheme="http://atcg.xyz/tags/cgi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写给未来的你</title>
+    <link href="http://atcg.xyz/2015/12/03/%E5%86%99%E7%BB%99%E6%9C%AA%E6%9D%A5%E7%9A%84%E4%BD%A0/"/>
+    <id>http://atcg.xyz/2015/12/03/写给未来的你/</id>
+    <published>2015-12-03T21:20:43.000Z</published>
+    <updated>2016-04-29T09:21:30.237Z</updated>
+    
+    <content type="html">&lt;p&gt;文章的作者我查了好一会都没确认，很多链接都认为是余光中。&lt;br&gt;但有些人认为是张梅：&lt;br&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_5938581b0100cv32.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.sina.com.cn/s/blog_5938581b0100cv32.html&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.zhihu.com/question/28371063&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zhihu.com/question/28371063&lt;/a&gt;&lt;br&gt;但无论如何这是一篇很好的文章，希望豆豆认字的时候就可以读到。&lt;/p&gt;
+&lt;p&gt;写给未来的你&lt;/p&gt;
+&lt;p&gt;孩子，我希望你自始至终都是一个理想主义者。&lt;br&gt;你可以是农民，可以是工程师，可以是演员，可以是流浪汉，但你必须是个理想主义者。&lt;br&gt;童年，我们讲英雄故事给你听，并不是一定要你成为英雄，而是希望你具有纯正的品格。&lt;br&gt;少年，我们让你接触诗歌、绘画、音乐，是为了让你的心灵填满高尚的情趣。&lt;br&gt;这些高尚的情趣会支撑你的一生，使你在最严酷的冬天也不会忘记玫瑰的芳香。&lt;br&gt;理想会使人出众。&lt;br&gt;孩子，不要为自己的外形担忧。&lt;br&gt;理想纯洁你的气质，而最美貌的女人也会因为庸俗而令人生厌。&lt;br&gt;通向理想的途径往往不尽如人意，而你亦会为此受尽磨难。&lt;br&gt;但是，孩子，你尽管去争取，理想主义者的结局悲壮而绝不可怜。&lt;br&gt;在貌似坎坷的人生里，你会结识许多智者和君子，你会见到许多旁人无法遇到的风景和奇迹。&lt;br&gt;选择平庸虽然稳妥，但绝无色彩。&lt;br&gt;不要为蝇头小利放弃自己的理想，不要为某种潮流而改换自己的信念。&lt;br&gt;物质世界的外表太过复杂，你要懂得如何去拒绝虚荣的诱惑。&lt;br&gt;理想不是实惠的东西，它往往不能带给你尘世的享受。&lt;br&gt;因此你必须习惯无人欣赏，学会精神享受，学会与他人不同。 &lt;/p&gt;
+&lt;p&gt;其次，孩子，我希望你是个踏实的人。&lt;br&gt;人生太过短促，而虚的东西又太多，你很容易眼花缭乱，最终一事无成。&lt;br&gt;如果你是个美貌的女孩，年轻的时候会有许多男性宠你，你得到的东西太过容易，这会使你流于浅薄和虚浮；&lt;br&gt;如果你是个极聪明的男孩，又会以为自己能够成就许多大事而流于轻佻。&lt;br&gt;记住，每个人的能力有限，我们活在世上能做好一件事足矣。&lt;br&gt;写好一本书，做好一个主妇。&lt;br&gt;不要轻视平凡的人，不要投机取巧，不要攻击自己做不到的事。&lt;br&gt;你长大后会知道，做好一件事太难，但绝不要放弃。 &lt;/p&gt;
+&lt;p&gt;你要懂得和珍惜感情。&lt;br&gt;不管男人女人，不管墙内墙外，相交一场实在不易。&lt;br&gt;交友的过程会有误会和摩擦，但想一想，诺大世界，有缘结伴而行的能有几人？&lt;br&gt;你要明白朋友终会离去，生活中能有人伴在身边，听你倾谈，倾谈给你听，就应该感激。&lt;br&gt;要爱自己和爱他人，要懂自己和懂他人。&lt;br&gt;你的心要如溪水般柔软，你的眼波要像春天般明媚。&lt;br&gt;你要会流泪，会孤身一人坐在黑暗中听伤感的音乐。&lt;br&gt;你要懂得欣赏悲剧，悲剧能丰富你的心灵。 &lt;/p&gt;
+&lt;p&gt;希望你不要媚俗。&lt;br&gt;你是个独立的人，无人能抹杀你的独立性，除非你向世俗妥协。&lt;br&gt;要学会欣赏真，要在重重面具下看到真。&lt;br&gt;世上圆滑标准的人很多，但出类拔萃的人极少。而往往出类拔萃又隐藏在卑琐狂荡之下。&lt;br&gt;在形式上我们无法与既定的世俗争斗，而在内心我们都是自己的国王。&lt;br&gt;如果你的脸上出现谄媚的笑容，我将会羞愧地掩面而去。&lt;br&gt;世俗的许多东西虽耀眼却无价值，不要把自己置于大众的天平上，不然你会因此无所适从，人云亦云。 &lt;/p&gt;
+&lt;p&gt;在具体的做人上，我希望你不要打断别人的谈话，不要娇气十足。&lt;br&gt;你每天至少要拿出两小时来读书，要回信写信给你的朋友。&lt;br&gt;不要老是想着别人应该为你做些什么，而要想着怎么去帮助他人。&lt;br&gt;借他人的东西要还，不要随便接受别人的恩惠。&lt;br&gt;要记住，别人的东西，再好也是别人的；自己的东西，再差也是自己的。 &lt;/p&gt;
+&lt;p&gt;孩子，还有一件事，虽然做起来很难，但相当重要，这就是要有勇气正视自己的缺点。&lt;br&gt;你会一年年地长大，会渐渐遇到比你强、比你优秀的人，会发现自己身上有许多你所厌恶的缺点。&lt;br&gt;这会使你沮丧和自卑。&lt;br&gt;但你一定要正视它，不要躲避，要一点点地加以改正。&lt;br&gt;战胜自己比征服他人还要艰巨和有意义。 &lt;/p&gt;
+&lt;p&gt;不管世界潮流如何变化，但人的优秀品质却是永恒的：正直、勇敢、独立。&lt;br&gt;我希望你是一个优秀的人。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;文章的作者我查了好一会都没确认，很多链接都认为是余光中。&lt;br&gt;但有些人认为是张梅：&lt;br&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_5938581b0100cv32.html&quot; target=&quot;_blank&quot; rel=&quot;externa
+    
+    </summary>
+    
+    
+      <category term="Doudou" scheme="http://atcg.xyz/tags/Doudou/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Backup This Blog to GitHub Automatically</title>
+    <link href="http://atcg.xyz/2015/12/03/Backup-This-Blog-to-GitHub-Automatically/"/>
+    <id>http://atcg.xyz/2015/12/03/Backup-This-Blog-to-GitHub-Automatically/</id>
+    <published>2015-12-03T00:43:38.000Z</published>
+    <updated>2016-04-29T09:21:30.229Z</updated>
+    
+    <content type="html">&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cp -rf ~/atcg-blog ~&lt;span class=&quot;meta-keyword&quot;&gt;/github/&lt;/span&gt;guti&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd ~&lt;span class=&quot;meta-keyword&quot;&gt;/github/&lt;/span&gt;guti/atcg-blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;log_message=`date`&lt;span class=&quot;string&quot;&gt;&quot; backup&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &lt;span class=&quot;string&quot;&gt;&quot;$log_message&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git push origin master&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//crontab -e:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt; * * * find ~&lt;span class=&quot;meta-keyword&quot;&gt;/atcg-blog/&lt;/span&gt;source/ -type f | xargs -i ~&lt;span class=&quot;meta-keyword&quot;&gt;/tmp/&lt;/span&gt;bpcs_uploader/bpcs_uploader.php &lt;span class=&quot;class&quot;&gt;upload &lt;/span&gt;&amp;#123;&amp;#125; &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*/&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt; * * * * sh &lt;span class=&quot;meta-keyword&quot;&gt;/home/&lt;/span&gt;ec2-user&lt;span class=&quot;meta-keyword&quot;&gt;/github/&lt;/span&gt;guti&lt;span class=&quot;meta-keyword&quot;&gt;/atcg-blog/&lt;/span&gt;backup.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>post</title>
+    <link href="http://atcg.xyz/2015/12/03/post/"/>
+    <id>http://atcg.xyz/2015/12/03/post/</id>
+    <published>2015-12-03T00:41:55.000Z</published>
+    <updated>2016-04-29T09:21:30.233Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2015 BGI Football Team</title>
+    <link href="http://atcg.xyz/2015/10/29/BGI-Football-Team/"/>
+    <id>http://atcg.xyz/2015/10/29/BGI-Football-Team/</id>
+    <published>2015-10-29T00:10:38.000Z</published>
+    <updated>2016-04-29T09:21:30.217Z</updated>
+    
+    <content type="html">&lt;img src=&quot;/2015/10/29/BGI-Football-Team/20151029160600.jpg&quot; alt=&quot;BGI football team&quot; title=&quot;BGI football team&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/2015/10/29/BGI-Football-Team/20151029160600.jpg&quot; alt=&quot;BGI football team&quot; title=&quot;BGI football team&quot;&gt;
+
+    
+    </summary>
+    
+    
+      <category term="足球" scheme="http://atcg.xyz/tags/%E8%B6%B3%E7%90%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网站备份</title>
+    <link href="http://atcg.xyz/2015/10/28/%E7%BD%91%E7%AB%99%E5%A4%87%E4%BB%BD/"/>
+    <id>http://atcg.xyz/2015/10/28/网站备份/</id>
+    <published>2015-10-28T22:42:49.000Z</published>
+    <updated>2016-04-29T09:21:30.273Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用百度云和&lt;a href=&quot;https://github.com/oott123/bpcs_uploader&quot; title=&quot;bpcs_uploader&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;bpcs_uploader&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;linux 命令&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;find atcg-blog/source/ -type f | xargs -i ~/tmp/bpcs_uploader/bpcs_uploader.php upload {} {}&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;crontab 定时备份:&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;使用百度云和&lt;a href=&quot;https://github.com/oott123/bpcs_uploader&quot; title=&quot;bpcs_uploader&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;bpcs_uploader&lt;/a&gt;&lt;
+    
+    </summary>
+    
+    
+      <category term="Web" scheme="http://atcg.xyz/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>奶奶和豆豆</title>
+    <link href="http://atcg.xyz/2015/10/26/%E5%A5%B6%E5%A5%B6%E5%92%8C%E8%B1%86%E8%B1%86/"/>
+    <id>http://atcg.xyz/2015/10/26/奶奶和豆豆/</id>
+    <published>2015-10-26T00:42:02.000Z</published>
+    <updated>2016-04-29T09:21:30.249Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/Un0ex2Mo9l1TFSD_TuDr6n3Z4kRvdhL0CTGgQUItwqpEVuWzRa-fpu9fHbSH1PS3MdscJOZA1DxUfi-QpV64XthzJ17I4wfD5lDKPN84Pea8kacKIURx_y35fQd-T1OXgxjUeXziIHUNv_kGVni1iYQcorYHI7THzQqNx_XBj2suYHg1Ey0Glb-5mtkd6k9ghe3PmtuYYQg3Ar1Lfp0ijYyGJLfyqSoxvhkeO2g6C9IU5gV5ONh7kapGQCQDyNVno3vm_DcNhpnvvzrg-yYIjPzJBiEr3uc9urxvbClao10DtkdXBggsT_bZ47EYp-aZUtpLab0MzK4Y1aA0WYX6d2oCiQP5SBlMzDY4JdQQH5-gqFu2qHoKIHtsM14AhKwxJ65s8-XsXih5Wwfa5IP3LNFEGac8T_Xi-pNHd_wTBoad7Uo501aoHEvFI25W-xsUSdqchfczW6cqaPutPpoYTzF17QiJRaRsFNDi0lZVdYzIVitC9rYCefgZtljlWfQw9B2EN4PQJPw9GfdZD4LmSDIGj6D1lAaFMqixO0grnotQ=w612-h815-no&quot; alt=&quot;梅林公园&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://d.pcs.baidu.com/thumbnail/761f1226f110ba021cd2e7e3b42ee336?fid=3053976615-250528-367849802961780&amp;amp;time=1445846400&amp;amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-ycIMKqPkgmHSAXInfXwu5QZIJfg%3D&amp;amp;rt=sh&amp;amp;expires=2h&amp;amp;r=429255431&amp;amp;sharesign=unknown&amp;amp;size=c710_u500&amp;amp;quality=100&quot; alt=&quot;开平&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/Un0ex2Mo9l1TFSD_TuDr6n3Z4kRvdhL0CTGgQUItwqpEVuWzRa-fpu9fHbSH1PS3MdscJOZA1DxUfi-QpV64XthzJ17I4
+    
+    </summary>
+    
+    
+      <category term="Doudou" scheme="http://atcg.xyz/tags/Doudou/"/>
+    
+      <category term="Family" scheme="http://atcg.xyz/tags/Family/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Happy Birthday to Lili</title>
+    <link href="http://atcg.xyz/2015/10/22/Happy-Birthday-to-Lili/"/>
+    <id>http://atcg.xyz/2015/10/22/Happy-Birthday-to-Lili/</id>
+    <published>2015-10-22T01:23:12.000Z</published>
+    <updated>2016-04-29T09:21:30.229Z</updated>
+    
+    <content type="html">&lt;p&gt;生日快乐！&lt;/p&gt;
+&lt;img src=&quot;/2015/10/22/Happy-Birthday-to-Lili/lili.jpg&quot; alt=&quot;祝老婆生日快乐，年年十八&quot; title=&quot;祝老婆生日快乐，年年十八&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;生日快乐！&lt;/p&gt;
+&lt;img src=&quot;/2015/10/22/Happy-Birthday-to-Lili/lili.jpg&quot; alt=&quot;祝老婆生日快乐，年年十八&quot; title=&quot;祝老婆生日快乐，年年十八&quot;&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2013年总结</title>
+    <link href="http://atcg.xyz/2014/01/06/2013%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
+    <id>http://atcg.xyz/2014/01/06/2013年总结/</id>
+    <published>2014-01-06T13:09:09.000Z</published>
+    <updated>2016-04-29T09:21:30.213Z</updated>
+    
+    <content type="html">&lt;p&gt;去年元旦跟煌凯开平看碉楼仿佛还在昨日，时间实在过得太快太快，有时候感觉自己都不能按年来写总结了。&lt;/p&gt;
+&lt;p&gt;我在产房门口，丽丽我亲爱的老婆正在经历着分娩的痛苦，但我相信你一定没问题的，因为我的老婆是走着进入产房的。&lt;/p&gt;
+&lt;p&gt;回顾我的2013，我应该狠狠地感谢上苍，让我度过了不平凡的一年，或许是我将近三十年的历程中最重要的一年。&lt;/p&gt;
+&lt;p&gt;2012年的春节，张弛，向哥和我一起骑车回到到了我的家乡，我父辈们千辛万苦走出去，我却不辞辛苦的骑回来。奶奶从听到我要骑车回来到见到我骑车回来一直都各种无语。&lt;/p&gt;
+&lt;p&gt;开春后，工作毫无起色，方老师把一篇约稿的文章交待给我，介绍性文章，虽不是什么好东西，但还是希望能如约的见刊。&lt;/p&gt;
+&lt;p&gt;我和丽丽终于燃烧起来了。爱情就是一个对的时间遇上一个对的人，做一些平凡却又重要的事情。车站告别与接送，梧桐山之行，大梅沙绿道徒步，打麻将打升级，炒土豆做疙瘩打火锅，执子之手，漫步海鲜街，以及海滩的求婚。一切发生在我们俩身上的事情似乎都是随机的，乱序的，但又合情合理，舒舒服服。&lt;/p&gt;
+&lt;p&gt;五月的时候，一群基友骑行台湾岛，有些精彩，有些遗憾。最好的时光总是应该和最爱的人在一起，基友们的滥情我已无福消受，或许这是我最后的青春了。&lt;/p&gt;
+&lt;p&gt;台湾回来后，丽丽怀上宝宝了，于是我赶紧策划求婚，多亏了一群好兄弟好姐妹，总体上非常成功。&lt;/p&gt;
+&lt;p&gt;五月份的时候确定博士录取，欣喜，忧虑，机会，挑战。&lt;/p&gt;
+&lt;p&gt;六月份，工作有了新的转机，准备参与cg那边的工作，七月份出发去美国，丽丽妈来深照顾。&lt;/p&gt;
+&lt;p&gt;在美国生活的三个月感慨良多，不一一细谈。&lt;/p&gt;
+&lt;p&gt;十月份回深后，进入奶爸培养行列，买菜做饭，做家务。&lt;/p&gt;
+&lt;p&gt;回顾这一年，生活中多了很多寄托，不再迷茫，虽然一年的工资没涨，房价又飙升，没车，没房，存款也不见涨。&lt;/p&gt;
+&lt;p&gt;努力，2014，该置办点家底了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;去年元旦跟煌凯开平看碉楼仿佛还在昨日，时间实在过得太快太快，有时候感觉自己都不能按年来写总结了。&lt;/p&gt;
+&lt;p&gt;我在产房门口，丽丽我亲爱的老婆正在经历着分娩的痛苦，但我相信你一定没问题的，因为我的老婆是走着进入产房的。&lt;/p&gt;
+&lt;p&gt;回顾我的2013，我应该狠狠地感谢上苍，
+    
+    </summary>
+    
+    
+      <category term="Annual Review" scheme="http://atcg.xyz/tags/Annual-Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2012</title>
+    <link href="http://atcg.xyz/2013/01/04/2012/"/>
+    <id>http://atcg.xyz/2013/01/04/2012/</id>
+    <published>2013-01-04T04:16:46.000Z</published>
+    <updated>2016-04-29T09:21:30.213Z</updated>
+    
+    <content type="html">&lt;p&gt;2012的最后一天，我坐在开往开平市的大巴上，回忆着我的2012。&lt;/p&gt;
+&lt;p&gt;日子比想象中过的更快，有时候明明记得昨天是周二开了例会，怎么今天就周五明天就周末休息了。&lt;/p&gt;
+&lt;p&gt;老爸说，人过了三十岁，日子就飕飕的过。可我还没到三十，已经有这种强烈的感觉了。&lt;/p&gt;
+&lt;p&gt;2012是一个我非常无力的一年，除了环青海湖实现了我人生清单里面的一个目标外，其他方面的碌碌无为让我非常失落。本对末日非常不屑的我，竟有了一丝丝的期盼。但末日并没有如期而至，我的生活仍将继续，回忆是最好的思考，但其实也就像做完卷子进行例行检查一样，做的时候已经决定了你能得多少分，过去一年的生活因此也不会因为回忆增添色彩而会变得异常美好，甚至有时会有些惆怅失意。&lt;/p&gt;
+&lt;p&gt;年初的时候我还在野心勃勃的想着要考英语读phd，可无情的分数出现在眼前的时候，我退却了。&lt;/p&gt;
+&lt;p&gt;晚些时候，因公出差去了北京，第一次去帝都，诚惶诚恐。古月妹妹带着我逛了北京城和小清新的后海，晚上还和肥仔碰了头。在爬长城的时候认识了一个爽朗的山东女孩，清华园，未名湖走了圈回来。&lt;/p&gt;
+&lt;p&gt;论文不出意外的被NC拒了，准备改投。期间去了趟新加坡，这次让我认识了很多大牛。bioteam的创始人，galaxy的负责人，牛气可爱的红梅姐，他们年轻有为，作为榜样，让我有了奋进的力量。&lt;/p&gt;
+&lt;p&gt;第一次出国，对新加坡印象非常好。simon作为东道主请我们吃了大螃蟹和榴莲。这是我人生第一次喜欢上了榴莲的味道。新加坡的赌场外国游客免费进入，而本国的居民却要一笔不菲的门票。我进去溜达了一圈，看着那些500新币的筹码像游戏币般的进进出出，我知道这里不适合我，我实在太胆小了。&lt;/p&gt;
+&lt;p&gt;因此我都不敢正眼去看街边打扮妖艳的女人，只有那静谧的植物园和quake码头似乎能让我静静的去体验这个异国他乡的华人世界。狮国的繁华让香港和深圳都黯然失色，繁华过后，思飞离去，尽管我们俩几乎没有交集，但如此出色的人离开让人不免难过。&lt;/p&gt;
+&lt;p&gt;组织架构的调整让不少人滋生去意，火辣的亚男姐也走了。&lt;/p&gt;
+&lt;p&gt;我开始佩服那些人勇于做出改变人生轨迹的事情，我寂寞了，依然胆小。&lt;/p&gt;
+&lt;p&gt;然而，裕佳的离去是2012年里我心中吹不走的阴霾。这位年轻聪明的小伙子怎能忍心让年迈的父母遭受如此大的苦难，我想不明白，也无法理解裕佳的痛苦。他哥哥在收拾遗物的时候，泪如雨下，让我历历在目，不能忘记。&lt;/p&gt;
+&lt;p&gt;论文投递出去后，有了一小段休息的时间，我开始计划环青海湖之行。我需要去走走，也为了完成我的梦想。&lt;/p&gt;
+&lt;p&gt;一望无际的油菜花，蔚蓝的青海湖，清澈的天空，沙二王旭阿汤海哥一路相随，这些时光是我一生重要的财富。回去的路上经过西安，登上华山，为这段旅途划上了圆满的句号。&lt;/p&gt;
+&lt;p&gt;一审回来，论文需要大改，不容乐观，开始持续加班。最后以二审被拒告终。&lt;/p&gt;
+&lt;p&gt;阳朔故地重游，丹霞随便走走。心有旁骛。&lt;/p&gt;
+&lt;p&gt;工作的内容和目标不停的改变，产出几乎为零，让我身心疲惫。和小洁的牵手并没有让我们走完2012，让岁末的年关过的格外艰难。好在家里父母都健康顺利，周末回家斗地主打麻将让我释放了不少压力。&lt;/p&gt;
+&lt;p&gt;马上又是一轮架构调整，我似乎是海上的浮萍，不知道是飘向巅峰的方向，还是要被拍死在岸边。抑或随波逐流。&lt;/p&gt;
+&lt;p&gt;我需要更多的思考。&lt;/p&gt;
+&lt;p&gt;我开始减少了看电影的时间，减少了无谓的开销，少去论坛，不再谈理想。&lt;/p&gt;
+&lt;p&gt;我不知道我最终会成为一个什么样的人，但我知道我不想要什么。改变，从2012的最后一天开始。2013，我需要些勇气。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2012的最后一天，我坐在开往开平市的大巴上，回忆着我的2012。&lt;/p&gt;
+&lt;p&gt;日子比想象中过的更快，有时候明明记得昨天是周二开了例会，怎么今天就周五明天就周末休息了。&lt;/p&gt;
+&lt;p&gt;老爸说，人过了三十岁，日子就飕飕的过。可我还没到三十，已经有这种强烈的感觉了。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="Annual Review" scheme="http://atcg.xyz/tags/Annual-Review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>连打两天篮球</title>
+    <link href="http://atcg.xyz/2012/08/24/%E8%BF%9E%E6%89%93%E4%B8%A4%E5%A4%A9%E7%AF%AE%E7%90%83/"/>
+    <id>http://atcg.xyz/2012/08/24/连打两天篮球/</id>
+    <published>2012-08-24T09:00:58.000Z</published>
+    <updated>2016-04-29T09:21:30.273Z</updated>
+    
+    <content type="html">&lt;p&gt;昨天七夕打到12点，今天打到11点，真打累了。 明天一大早还得去拓展培训。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天七夕打到12点，今天打到11点，真打累了。 明天一大早还得去拓展培训。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一晃又是半年</title>
+    <link href="http://atcg.xyz/2012/08/13/%E4%B8%80%E6%99%83%E5%8F%88%E6%98%AF%E5%8D%8A%E5%B9%B4/"/>
+    <id>http://atcg.xyz/2012/08/13/一晃又是半年/</id>
+    <published>2012-08-13T04:35:23.000Z</published>
+    <updated>2016-04-29T09:21:30.237Z</updated>
+    
+    <content type="html">&lt;p&gt;有时候，连着吃了几次闭门羹，虽不痛不痒，但自然也不会再来敲门了。  然后跑去douban了，发了些帖子，贴了些照片。  心血来潮，又回来摸了一下伤疤，发现还是很有感觉。  这就是google&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候，连着吃了几次闭门羹，虽不痛不痒，但自然也不会再来敲门了。  然后跑去douban了，发了些帖子，贴了些照片。  心血来潮，又回来摸了一下伤疤，发现还是很有感觉。  这就是google&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>awk的一些使用方法</title>
+    <link href="http://atcg.xyz/2012/04/01/awk%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://atcg.xyz/2012/04/01/awk的一些使用方法/</id>
+    <published>2012-04-01T01:50:33.000Z</published>
+    <updated>2016-04-29T09:21:30.233Z</updated>
+    
+    <content type="html">&lt;p&gt;输出字符串长度：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;
+awk &#39;{if(length($1)&amp;gt;200)print}&#39; 
+&lt;/pre&gt;
+
+&lt;p&gt;去掉最后两行：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;awk &#39;NF-=2&#39; 2C.txt  | le  &lt;/pre&gt;
+
+&lt;p&gt;for语句与split语句：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;le rid_list.txt | awk -F\; &#39;{for(i=1;i&amp;lt;NF;++i){split($i,a,&quot;,&quot;);print a[1];}}&#39; | le  &lt;/pre&gt;
+
+&lt;p&gt;用分号分割需要转义：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;awk -F\; &#39;{print $1}&#39; rid_list.txt&lt;/pre&gt;
+
+&lt;p&gt;第三列出现分隔符(分号)的次数小于10次的输出：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;awk &#39;{if(gsub(/;/,&quot;&amp;amp;&quot;,$3)&amp;lt;10) print}&#39;&lt;/pre&gt;
+
+&lt;p&gt;取出第5个字符开始的数字，并求平均值：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;cut -c 5-| awk &#39;{sum+=$1}END{print sum/NR}&#39;&lt;/pre&gt;
+
+&lt;p&gt;产生随机数：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;echo &#39;&#39;|awk &quot;BEGIN{srand($RANDOM)}{for (i=1;i&amp;lt;=100;i++)printf \&quot;%06d\n\&quot;,rand()*1000000}&quot;&lt;/pre&gt;
+
+&lt;p&gt;用逗号隔开：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;
+awk &#39;$1==1{if(i++)printf &quot;,&quot;$2;else printf $2}&#39; text
+awk &#39;BEGIN{OFS=&quot;,&quot;}$1=$1&#39; text
+awk &#39;{if(!a[$1])a[$1]=$2;else{a[$1]=a[$1]&quot;,&quot;$2}}END{for(i in a)print i,a}&#39; text 
+awk &#39;{printf $2&quot;,&quot;}&#39;  text
+&lt;/pre&gt;
+
+&lt;p&gt;去除空行:&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;awk NF  &lt;/pre&gt;
+
+
+
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;输出字符串长度：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;
+awk &#39;{if(length($1)&amp;gt;200)print}&#39; 
+&lt;/pre&gt;
+
+&lt;p&gt;去掉最后两行：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;awk 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop的一些使用方法</title>
+    <link href="http://atcg.xyz/2012/04/01/hadoop%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://atcg.xyz/2012/04/01/hadoop的一些使用方法/</id>
+    <published>2012-04-01T01:49:12.000Z</published>
+    <updated>2016-04-29T09:21:30.233Z</updated>
+    
+    <content type="html">&lt;p&gt;命令行查看当前正在执行的job id:&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;[hadoop@compute-63-9 ~]$ /hadoop/hadoop_home/bin/hadoop job -jt compute-63-0:9001 -list all |awk &#39;{ if($2==1) print $1 }&#39;
+job_201203311041_0041&lt;/pre&gt;
+
+&lt;p&gt;设置副本数目&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;hadoop fs -setrep [-R] [-w] &amp;lt;副本個數&amp;gt; &amp;lt;HDFS檔案名稱&amp;gt;&lt;/pre&gt;
+
+&lt;p&gt;设置map输出压缩：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt; 
+  conf.set(&quot;mapred.compress.map.output&quot;, &quot;true&quot;)
+  conf.set(&quot;mapred.output.compression.type&quot;, &quot;BLOCK&quot;); 
+  conf.set(&quot;mapred.map.output.compression.codec&quot;, &quot;org.apache.hadoop.io.compress.GzipCodec&quot;);
+&lt;/pre&gt;
+
+&lt;p&gt;存储写满了。&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;org.apache.hadoop.util.DiskChecker$DiskErrorException: Could not find any valid local directory for taskTracker/jobcache/job_201108311619_0703/attempt_201108311619_0703_m_000076_0/output/spill0.out
+
+Error: java.io.IOException: No space left on device
+
+java.io.IOException: Task: attempt_201108311619_0703_r_000002_0 - The reduce copier failed&lt;/pre&gt;
+
+&lt;p&gt;hadoop目的地启动distcp数据传输：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;hadoop distcp hdfs://172.30.4.50:9000/user/hadoop/lisk/mouse/str/ hdfs://hs14:9000/user/hadoop/gusc/new_contig
+或者
+hadoop distcp hdfs://172.30.4.50:9000/user/hadoop/lisk/mouse/id /user/hadoop/gusc
+&lt;/pre&gt;
+
+&lt;p&gt;Map与Reduce之间的格式要注意，如果没写Map的输出格式，则默认按照Reduce的处理。如果Map和Reduce直接数据格式不一致，则需要指明：&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;
+job.setMapOutputKeyClass(Class&amp;lt;?&amp;gt; theClass)
+job.setMapOutputValueClass(Class&amp;lt;?&amp;gt; theClass)
+job.setOutputKeyClass(Class&amp;lt;?&amp;gt; theClass)
+job.setOutputValueClass(Class&amp;lt;?&amp;gt; theClass)
+&lt;/pre&gt;
+
+&lt;p&gt;Reducer的类型没对应上有时候并不会出错，得仔细检查。如下所示，这时候会调用默认的reducer来执行。&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;  public static class Reduce extends Reducer&amp;lt;LongWritable, Text, Text, Text&amp;gt; {
+    public void reduce(Text key, Iterable&amp;lt;Text&amp;gt; values, Context context)
+        throws IOException, InterruptedException {
+        }
+  }&lt;/pre&gt;
+
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;命令行查看当前正在执行的job id:&lt;/p&gt;
+&lt;pre name=&quot;code&quot; class=&quot;java&quot;&gt;[hadoop@compute-63-9 ~]$ /hadoop/hadoop_home/bin/hadoop job -jt compute-63-0:9001 -
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2011我最喜欢的两个东西</title>
+    <link href="http://atcg.xyz/2012/02/25/2011%E6%88%91%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%A4%E4%B8%AA%E4%B8%9C%E8%A5%BF/"/>
+    <id>http://atcg.xyz/2012/02/25/2011我最喜欢的两个东西/</id>
+    <published>2012-02-25T23:16:43.000Z</published>
+    <updated>2016-04-29T09:21:30.213Z</updated>
+    
+    <content type="html">&lt;p&gt;1.豆瓣电台&lt;br&gt;2.Evernote&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.豆瓣电台&lt;br&gt;2.Evernote&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>求医</title>
+    <link href="http://atcg.xyz/2012/02/25/%E6%B1%82%E5%8C%BB/"/>
+    <id>http://atcg.xyz/2012/02/25/求医/</id>
+    <published>2012-02-25T19:39:17.000Z</published>
+    <updated>2016-04-29T09:21:30.253Z</updated>
+    
+    <content type="html">&lt;p&gt;我妈老说，我小时候体弱多病，差不多同龄的孩子在玩，我总是穿着干干净净的衣服在一旁看着。&lt;/p&gt;
+&lt;p&gt;等到稍大的时候，大概是三四年级的样子，我爱上了看《足球小将》，喜欢上了踢足球，身体才开始慢慢的强壮起来，生病的时候也越来越少，很少去医院。&lt;/p&gt;
+&lt;p&gt;有时候我肚子右侧，肋骨下方有时候会隐隐作痛。我觉得这种痛是比较奇怪的，于是趁着周末，我去了一趟北大医院做个检查，这就开始了我一天的求医之路。&lt;/p&gt;
+&lt;p&gt;周末习惯性的睡个懒觉，起来都九点多了，想着检查不用吃早餐，十点左右就出门了。后来，路上我想起了上次去北大医院看牙科的时候，那个护士跟我说，如果你要拔牙你就应该早上六点多来排队挂号。好吧，那我就只能当今天去北大医院买张彩票吧。&lt;/p&gt;
+&lt;p&gt;公交车两站路就到了。挂号的地方赫然地贴着:xx科挂号已满，yy科挂号已满…其实我压根就不知道去哪个科看病，来之前查找了一些相关的资料，猜测应该是内科，仔细看了一下，内科已满，纯属意料之中。想着既然来了，多少要有点收获，就在那里瞎转。后来看到大厅里面有一处不少人在排队，上面那地方写着简易门诊，其中一项是咨询，我想着这个正合我意，赶紧去取了简易门诊的挂号，用社保卡挂号现金费用一元。这个性价比实在太赞了，但我不太明白这一元钱为啥不能从社保卡扣呢？不过钱比较少，大家不关心，我也不在乎。&lt;/p&gt;
+&lt;p&gt;医院内有好些护士身上斜挂着红色的条布，称为导医。简易门诊的队伍有点长，我去排队的时候专门去向导医问问，说我腹部右侧不舒服，能不能通过简易门诊得到我具体应该去哪个科看病，她说不行。我就跟她说那上面不是写着提供咨询的么？她说没有。我那一会立马就无语了。不过好在我来时查了些资料，知道那个地方有肾，胆囊，肝脏，肠。过一会就问她，我可能得结石或阑尾，那你知道我应该去哪个科看病么？她说去看外科，要去外科处挂号。我喜出望外，心想着还可以再去外科处再买一次彩票。&lt;/p&gt;
+&lt;p&gt;外科处的挂号处也有不少排队，我又咨询了一下那里的导医，说我腹部右侧痛疼，她说挂胃肠外科，要排下午的号，而且这边也可以做CT，彩超之类的。我想着挺合算的，不能半途而废，于是挂了个胃肠外科下午的号。挂了号后已经快中午11点了，我心里还在想着我这个好像跟胃肠没太大关系，于是趁着有个病人刚从胃肠科出来，赶紧溜进去问医生，指着我那个位置说，这个病是在你这里看么？他抬头看着我问了句，上面还是下面？我说上面。他说去肝胆外科。我心想，医生就是医生，这诊断斩钉截铁的。&lt;/p&gt;
+&lt;p&gt;我很庆幸啊。然后出来，故技重施，跟那个肝胆外科的医生说了我的情况，并且强调说是隔壁的医生让我来找你们科的。他说好，让我去外面换一个号。不过，这次真的是中六合彩了，我前面只有一人。前面那个哥们在和医生扯皮，貌似是不太相信那个医生的结论。那个医生就说，你可以去其他医院看看别的医生怎么说的，甚至做个飞机去上海啥啥的…最后那个哥们只好打趣地说，我第一次来医院没想到…还是那句话，医生就是医生，真牛。&lt;/p&gt;
+&lt;p&gt;等了一会我就进去和医生会诊了，没说两句，他就让我先去做个彩超。到了做彩超的地方，又是排队。那个护士说，做彩超又只能到下午两点后了，而且中午只能喝白开水不能吃东西。没办法了，说啥是啥了。在哪里溜达了一会，我就走回家了。要饿也在家饿啊。&lt;/p&gt;
+&lt;p&gt;回到家约12点，中午不能吃饭，陪着UU出去散步，回来后碰巧有全明星新秀赛，让我的时间过得快了不少。&lt;/p&gt;
+&lt;p&gt;下午两点多回到医院，等了一会就到我了。彩超这个玩意就是一个探头，一台主机和一个软件，扫描一下内脏器官。以前上大学的时候去参加过东芝的类似产品展销的兼职，只要有人要过来看这个产品，我就要做人体模特，而那次兼职收获最大的是知道我肾脏很健康。这次肝胆胰脾检查使用的是飞利浦的机器，检查的时候突然想起来去年下半年体检的时候刚检查过这个玩意，五分钟后，检查完毕，医生说没有任何问题。于是回到主治医生那里，医生说很好，没有问题。我又无语了。然后，他说可以去消化内科那看看，那个位置还有十二指肠啥的…我说现在内科没办法挂号了，你有什么办法？他说他也没办法了，明天周末可以早点来。&lt;/p&gt;
+&lt;p&gt;算了一笔账，一台机器最贵要一百万，一天最少也能有五十人，一天就六千七百五十，一年左右就两百多万了。当然，医保的钱，我们都不会认为那是钱，就只能随便让他们捣腾了。&lt;/p&gt;
+&lt;p&gt;我又不甘心，来到内科处，果然没法挂号了。从护士mm那里得知，医生那边签字可能可以拿到挂号。于是，又一把故技重施，这女医生很好很善良，我顺利的拿到挂号，然后开始了漫长的等待。吃了面包和维他奶做午饭，然后在椅子上听了会英语，居然睡了一觉。四点多的时候，有个大妈开始闹起来了，骂医院。她说她早上八点多过来，等了一天都没看上病。庆幸的是，她闹了没一会立马就轮到我了。这是个正高的主治医生，之前看外科的那位也是，正高的挂号费都是七元，普通的好像是五元，不过对于使用社保卡来说都一样，全场一元。她问了些情况，也做了一些检查，然后开始写病例。这病例是她专门叫我去买的，也是一元。我估计她不太会电脑打字，当然也有可能是不想让大家知道她诊断书的内容或无法舍弃她那无法阅读的书法艺术。总之，最后的结果是她也不确定什么问题，需要进一步检查，说下周复诊前做个大小便测试。然后开了个胃药给我，说也有可能是十二指肠溃疡。&lt;/p&gt;
+&lt;p&gt;而后我下楼准备去交钱取药，天杀的社保局居然罢工了，只能给现金。看了药单上一个三十元的药，想着自己之前还有一些储备，于是便走出了医院。&lt;/p&gt;
+&lt;p&gt;回家的路上，看着路边有人卖二手自行车的Duke 600，居然要一千五啊，没买。然后路边有人卖很大很大的江西脐橙，说一个一斤多，十元五个，我觉得甚是划算，买了五个回家，路过金鱼档，花了五元买了一条黑的一条红的，比较大，档主说比较好养。最后，再买了两块钱的苗族土家饼填饱肚子。&lt;/p&gt;
+&lt;p&gt;于是，为了这个目前尚未得知结果的病折腾了一天后，我发现我其实跟医生交流的时间不超过二十分钟，而且我已经是耍了一下小聪明，算是获得了比较多的机会，我不知道那些老实巴交的其他人会不会折腾了一天后无功而返的。不过想想那句话，现在看得起病的都是有钱有关系的人，从医院的停车场来看，确实不一般。奔驰宝马奥迪就不在话了，好多的军牌，劳斯莱斯也来凑热闹了。另外，我记得有个排队缴费的妈妈在打电话时说，早上过来号都没了，后来打了个电话给医院的同学，一早上全都检查完了。&lt;/p&gt;
+&lt;p&gt;回来，秤了一下橙子，四斤八两。无可奈何。希望那两金鱼能活长点时间。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我妈老说，我小时候体弱多病，差不多同龄的孩子在玩，我总是穿着干干净净的衣服在一旁看着。&lt;/p&gt;
+&lt;p&gt;等到稍大的时候，大概是三四年级的样子，我爱上了看《足球小将》，喜欢上了踢足球，身体才开始慢慢的强壮起来，生病的时候也越来越少，很少去医院。&lt;/p&gt;
+&lt;p&gt;有时候我肚子右侧，
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ATCG.XYZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ATCG.XYZ">
+<meta property="og:url" content="http://atcg.xyz/page/7/index.html">
+<meta property="og:site_name" content="ATCG.XYZ">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ATCG.XYZ">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="ATCG.XYZ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ATCG.XYZ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ATCG是我们骑行社的一面旗子，虽然已经下落不明，但它一定在远方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/cycling">Cycling</a>
+        
+          <a class="main-nav-link" href="/football">足球</a>
+        
+          <a class="main-nav-link" href="/doudou">Doudou</a>
+        
+          <a class="main-nav-link" href="/段子">段子</a>
+        
+          <a class="main-nav-link" href="/Myself">Change Myself</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://atcg.xyz"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-分布式文件系统NFS上搭建hadoop集群" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/12/18/分布式文件系统NFS上搭建hadoop集群/" class="article-date">
+  <time datetime="2011-12-18T00:32:54.000Z" itemprop="datePublished">2011-12-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/12/18/分布式文件系统NFS上搭建hadoop集群/">分布式文件系统NFS上搭建hadoop集群</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总的来说，hadoop并不适合搭建在NFS上。一来是NFS的存储成本过高，二来损失了hadoop原本在分布式上的“本地性”特点。</p>
+<p>不过由于各种各样的原因，有时候需要在分布式文件系统NFS上搭建hadoop。分布式NFS这种架构主要是计算节点和存储节点的分离。计算节点带有少量的存储。在某些情况下甚至没有存储可以用，这是因为计算节点除了装系统的空间外，不给用户在计算节点上存储任何东西。</p>
+<p>因此，搭建hadoop也就可以分两种情况：</p>
+<p>一、计算节点上有存储空间可以使用的情况。<br>这种情况其实较好处理。因为计算节点可以有存储可以用，因此可以把HADOOP_HOME设在每个计算节点的存储上，这个目录一般来说最多几百兆，而类似logs,tmp目录设置到NFS上，因为它们非常占存储，而且随着时间的推移，所占的空间越来越多，因此如果是放在计算节点上肯定是不行的。对于HADOOP_HOME，每个数据节点上的路径都是一致的。而logs和tmp目录应该根据每个不同的datanode设置不同的路径。<br>例如：<br>HADOOP_HOME在(hadoop-env.sh)中可以设置为：</p>
+<pre name="code" class="java">export HADOOP_HOME=/tmp/hadoop
+</pre>其中/tmp目录属于计算节点的存储。
+
+而log和pid目录在(hadoop-env.sh)中可以设置到NFS上去，其中/ifs/HDFS/hadoop为NFS上的路径。当然这两个路径虽然并不是非常占存储，不过随着集群运行的时间越来越长，log日志也会越来越大，因此放在NFS上是比较保险的。hadoop0表示第0个datanode，对于其他的datanode也要设置相应的路径。如hadoop1，hadoop2……等等。
+<pre name="code" class="java">export HADOOP_LOG_DIR=/ifs/HDFS/hadoop/hadoop0/logs
+export HADOOP_PID_DIR=/ifs/HDFS/hadoop/hadoop0/pids</pre>
+
+<p>另外就是设置存储hdfs上数据的tmp目录，在core-site.xml中：</p>
+<pre name="code" class="java">hadoop.tmp.dir
+/ifshk4/HDFS/hadoop/hadoop0/tmp
+A base for other temporary directories.</pre>
+
+<p>对于其他的datanode上的配置文件也做类似的更改。更好完之后，就是每台datanode在自己的存储上有相应的HADOOP_HOME目录，该目录下放置着与该datanode相关的配置文件，配置文件(hadoop-env.sh和core-site.xml)会告诉datanode要把hdfs上的数据存储到NFS上的那个目录(hadoop.tmp.dir)。</p>
+<p>二、计算节点上无存储空间</p>
+<p>这种情况下最大的问题是HADOOP_HOME必须要设置到不同的路径下。要解释这个问题我们首先看一下hadoop启动的过程。<br>1.启动start-all.sh<br>里面内容为：</p>
+<pre name="code" class="java">bin=`dirname "$0"`
+bin=`cd "$bin"; pwd`
+. "$bin"/hadoop-config.sh
+
+# start dfs daemons
+"$bin"/start-dfs.sh --config $HADOOP_CONF_DIR
+# start mapred daemons
+"$bin"/start-mapred.sh --config $HADOOP_CONF_DIR</pre>
+
+<p>执行三个脚本hadoop-config.sh，start-dfs.sh ，start-mapred.sh</p>
+<p>(1)hadoop-config.sh主要获得hadoop的配置文件路径<br>(2)start-dfs.sh 则启动namenode，datanodes和secondary namenode，其执行以下三行脚本：</p>
+<pre name="code" class="java">"$bin"/hadoop-daemon.sh --config $HADOOP_CONF_DIR start namenode $nameStartOpt
+"$bin"/hadoop-daemons.sh --config $HADOOP_CONF_DIR start datanode $dataStartOpt
+"$bin"/hadoop-daemons.sh --config $HADOOP_CONF_DIR --hosts masters start secondarynamenode</pre>
+(3)start-mapred.sh则启动JobTracker和TaskTrackers，其执行一下两行脚本：
+<pre name="code" class="java">"$bin"/hadoop-daemon.sh --config $HADOOP_CONF_DIR start jobtracker
+"$bin"/hadoop-daemons.sh --config $HADOOP_CONF_DIR start tasktracker</pre>
+
+<p>2.hadoop-daemon.sh和hadoop-daemons.sh<br>从上面流程可以得知：<br>hadoop-daemon.sh是启动单节点。<br>hadoop-daemons.sh则是用于启动slaves中其他多个节点。</p>
+<p>3.slaves.sh的问题<br>对于计算节点没有存储的情况下启动hadoop-daemons.sh 在默认没修改的事情下会报错误：</p>
+<pre name="code" class="java">Cannot lock storage, directory is already locked
+</pre>如http://www.mentby.com/hadoop/cannot-lock-storage-directory-is-already-locked.html提到的。
+
+这是因为在启动hadoop-daemons.sh 的时候会把当前namenode的配置文件信息所在的路径告诉slaves上的datanode，然后多个datanode就会在跟namenode设置一样的路径下进行读写操作，产生了冲突。
+
+从以下hadoop-daemons.sh的代码中可以看到：
+<pre name="code" class="java">exec "$bin/slaves.sh" --config $HADOOP_CONF_DIR cd "$HADOOP_HOME" \; "$bin/hadoop-daemon.sh" --config $HADOOP_CONF_DIR "$@"</pre>
+
+<p>而在slaves.sh中：</p>
+<pre name="code" class="java">for slave in `cat "$HOSTLIST"
+sed "s/#.*$//;/^$/d"`; do
+ssh $HADOOP_SSH_OPTS $slave $"${@// /\\ }" \
+2&gt;&amp;1
+sed "s/^/$slave: /" &amp;
+if [ "$HADOOP_SLAVE_SLEEP" != "" ]; then
+sleep $HADOOP_SLAVE_SLEEP
+fi
+done
+</pre>
+对于这个for循环启动其他的datanodes，它每次传进去的HADOOP_HOME都是namenode设置好的变量。
+
+4.解决
+既然知道问题的原因，解决起来也就很简单了。只需要在namenode去启动其他datanode时候告诉每个datanode其相应的HADOOP_HOME，然后去读取响应的配置文件即可。
+
+可以在NFS上设置目录：
+`-- hadoop
+
+-- hadoop160
+-- hadoop161
+-- hadoop162
+-- hadoop163
+-- hadoop164
+-- hadoop165
+-- hadoop166
+-- hadoop167
+-- hadoop168
+-- hadoop169
+-- hadoop170
+-- hadoop171
+-- hadoop172
+-- hadoop173
+-- hadoop174
+-- hadoop175
+-- hadoop176
+-- hadoop177
+-- hadoop178
+-- hadoop179
+-- hadoop180
+-- hadoop181
+-- hadoop182
+
+某个datanode的ip地址为192.168.6.160。则把它所有的相关的配置路径（如logs,tmp,conf,pids）都设置在该路径hadoop160的路径下。
+
+若集群namenode地址为192.168.6.100，它在调用slaves.sh的时候会把hadoop100的路径给其他的datanodes，这时候传参数的时候只要根据slaves的ip改成相应的目录即可。内容改变如下：
+
+<pre name="code" class="java">for slave in `cat "$HOSTLIST"|sed "s/#.*$//;/^$/d"`; do
+ip=`echo $slave | sed "s/^.*\.//"`
+cmd=`echo $"${@// /\\ }"|sed "s/hadoop100/hadoop$ip/g"`
+ssh $HADOOP_SSH_OPTS $slave $cmd 2&gt;&amp;1 |sed "s/^/$slave: /" &amp;
+if [ "$HADOOP_SLAVE_SLEEP" != "" ]; then
+sleep $HADOOP_SLAVE_SLEEP
+fi
+done</pre>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2011/12/18/分布式文件系统NFS上搭建hadoop集群/" data-id="ciofjl7xm001myg7tsldrrijh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-我最亲爱的" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/09/10/我最亲爱的/" class="article-date">
+  <time datetime="2011-09-10T07:48:23.000Z" itemprop="datePublished">2011-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/09/10/我最亲爱的/">我最亲爱的</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>词：林夕<br>曲：Russell Harris<br>编曲：刘志远</p>
+<p>很想知道你近况　<br>我听人说还不如你对我讲　<br>经过那段遗憾　<br>请你放心　我变得更加坚强　<br>世界不管怎样荒凉　<br>爱过你就不怕孤单　</p>
+<p>我最亲爱的　你过的怎么样　<br>没我的日子　你别来无恙　<br>依然亲爱的　我没让你失望　<br>让我亲一亲　像过去一样　</p>
+<p>我想你一定喜欢　<br>现在的我学会了你最爱的开朗　<br>想起你的模样　<br>有什么错　还不能够被原谅　<br>世界不管怎样荒凉　<br>爱过你就不怕孤单　</p>
+<p>我最亲爱的　你过的怎么样　<br>没我的日子　你别来无恙　<br>依然亲爱的　我没让你失望　<br>让我亲一亲　像朋友一样　</p>
+<p>虽然离开了你的时间　<br>比一起还漫长　<br>我们总能补偿　<br>因为中间空白的时光　<br>如果还能分享　也是一种浪漫　<br>关系虽然不再一样　<br>关心却怎么能说断就断　</p>
+<p>我最亲爱的　你过的怎么样　<br>没我的日子　你别来无恙　<br>依然亲爱的　我没让你失望　<br>让我亲一亲　像亲人一样　</p>
+<p>我最亲爱的　你过的怎么样　<br>没我的日子　你别来无恙　<br>依然亲爱的　我没让你失望　<br>让我亲一亲　像过去一样</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2011/09/10/我最亲爱的/" data-id="ciofjl7xv001uyg7tl8gifizd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-坚持一些事情" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/09/04/坚持一些事情/" class="article-date">
+  <time datetime="2011-09-04T06:27:12.000Z" itemprop="datePublished">2011-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/09/04/坚持一些事情/">坚持一些事情</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>坚持一些事情，就会坚持很多事情。</p>
+<p>这只是苏苏在群里聊天说的话，却深深地触动我的弦。我一直都是比较懒散和随便的人，以至于我一直记得曾经使用过的签名档：我做事情经常功亏一篑，但我乐此不疲。这句签名档真实地反应出我前半段生涯的情况。我总会为我没做成功的事情找很多借口，然后让自己心安理得。事实上，对于人生而言，这并不是什么坏事，至少这样能让我的生活过的比较快乐，但它却严重阻碍了我做好一件事情的脚步，因此我也无从谈如何追逐自己的理想。工作事业，哪怕是爱情，这一切都很关注结果。</p>
+<p>工作事业没做好，就是不称职，不能以学到很多东西作为借口并安慰自己。<br>爱情没有相伴一生，就是一个心灵的伤口，不能已成长的代价作为借口。</p>
+<p>我曾经给自己定下一些计划，但总是不能很好地贯彻到底。我也常常的反省，但苏苏的话让我明白，我做很多事情上面是不够执著，很多事情我习惯了放弃，因此我希望自己慢慢地学会一些坚持，当我能坚持一些事情的时候，我就能坚持很多事情。</p>
+<p>我给自己定了一周要坚持的事情，然后画了一个表格，看看我是否能每天坚持下来。<br>想起今年的计划还有不少没有实现，不能再放弃了。</p>
+<p>Keep on them in this Week :<br>1. Pratice(Sit-ups) for 10 minutes every day<br>2. Reading computer books for 1 hour every day<br>3. Prepare English for 1 hour every day<br>4. Go to bed before 12 o’clock every day<br>5. Expenses of this week<br>6. Post 2 technology blogs<br>7. Sum up week details</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2011/09/04/坚持一些事情/" data-id="ciofjl7xe001hyg7tcgl4uxhy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-难过是一首诗" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/07/28/难过是一首诗/" class="article-date">
+  <time datetime="2011-07-28T04:19:18.000Z" itemprop="datePublished">2011-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/07/28/难过是一首诗/">难过是一首诗</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>动车事故已经过去了，温相今天也出来表态了，我依旧难过和愤怒。</p>
+<p>我不停的想着无耻啊，卑鄙啊这些自语，慢慢地就变成了一句话：<br><strong>卑鄙是卑鄙者的通行证，高尚是高尚者的墓志铭。</strong></p>
+<p>后来想想，它不仅仅是一句话，而是一首诗：</p>
+<p>卑鄙是卑鄙者的通行证，<br>高尚是高尚者的墓志铭，<br>看吧，在那镀金的天空中，<br>飘满了死者弯曲的倒影。 </p>
+<p>冰川纪过去了，<br>为什么到处都是冰凌？<br>好望角发现了，<br>为什么死海里千帆相竞？ </p>
+<p>我来到这个世界上，<br>只带着纸、绳索和身影，<br>为了在审判之前，<br>宣读那些被判决的声音。 </p>
+<p>告诉你吧，世界<br>我–不–相–信！<br>纵使你脚下有一千名挑战者，<br>那就把我算作第一千零一名。 </p>
+<p>我不相信天是蓝的，<br>我不相信雷的回声，<br>我不相信梦是假的，<br>我不相信死无报应。 </p>
+<p>如果海洋注定要决堤，<br>就让所有的苦水都注入我心中，<br>如果陆地注定要上升，<br>就让人类重新选择生存的峰顶。 </p>
+<p>新的转机和闪闪星斗，<br>正在缀满没有遮拦的天空。<br>那是五千年的象形文字，<br>那是未来人们凝视的眼睛。</p>
+<p>诗名 : 回答 作者:北岛</p>
+<p>北岛，曾用笔名：北岛，石默。祖籍浙江湖州，生于北京。<br>本名赵振开，1949年出生，1978年同诗人芒克创办民间诗歌刊物《今天》。1990年旅居美国，现任教于加利福尼亚州戴维斯大学。曾获得诺贝尔文学奖提名。</p>
+<p>政治中从来没有好人。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2011/07/28/难过是一首诗/" data-id="ciofjl7yk002iyg7tg060lp1w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-To-Do-List" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2011/06/09/To-Do-List/" class="article-date">
+  <time datetime="2011-06-09T04:05:47.000Z" itemprop="datePublished">2011-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2011/06/09/To-Do-List/">To Do List</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看过《one minute fly》么？给自己一个To do list吧！</p>
+<p>———–2011————-</p>
+<p>看十本技术书籍：《构建高性能Web站点》《编程之美》《Programming Collective Intelligence》《高质量C++编程指南》《Data-Intensive Text Processing》《Mining of Massive Datasets》</p>
+<p>看十本小说：《追风筝的人》《窗边的小豆豆》《不存在的女儿》《你在天堂里遇见的五个人》</p>
+<p>看五十部电影：</p>
+<p>工资翻倍<br><span property="v:summary">恋爱</span><br><span property="v:summary">英语水平上一个台阶</span><br><span property="v:summary">写博客</span></p>
+<p>———–以后————-</p>
+<p>环青海湖骑自行车</p>
+<p>去天山<br>带爸妈去三峡和北京<br>去看世界杯<br>拥有自己的房子<br>结婚</p>
+<p>生子<br>写一本自传<br>去创业<br>有一个自己的足球场</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2011/06/09/To-Do-List/" data-id="ciofjl7yt002pyg7t9o54741u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annual-Review/">Annual Review</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doudou/">Doudou</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Family/">Family</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Movie/">Movie</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel/">Travel</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cgi/">cgi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/足球/">足球</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Annual-Review/" style="font-size: 20px;">Annual Review</a> <a href="/tags/Book/" style="font-size: 13.33px;">Book</a> <a href="/tags/Doudou/" style="font-size: 13.33px;">Doudou</a> <a href="/tags/Family/" style="font-size: 13.33px;">Family</a> <a href="/tags/Movie/" style="font-size: 16.67px;">Movie</a> <a href="/tags/Travel/" style="font-size: 13.33px;">Travel</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/cgi/" style="font-size: 10px;">cgi</a> <a href="/tags/足球/" style="font-size: 10px;">足球</a> <a href="/tags/骑行/" style="font-size: 10px;">骑行</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/20/Diamond-or-Code/">Want Diamond or Code ?</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/Interesting-Blogs/">Interesting Blogs</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/16/迎着风的2015/">迎着风的2015</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/02/新西兰之行/">新西兰之行</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/06/Fernando-Montano/">Fernando Montaño</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Guti Gu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/cycling" class="mobile-nav-link">Cycling</a>
+  
+    <a href="/football" class="mobile-nav-link">足球</a>
+  
+    <a href="/doudou" class="mobile-nav-link">Doudou</a>
+  
+    <a href="/段子" class="mobile-nav-link">段子</a>
+  
+    <a href="/Myself" class="mobile-nav-link">Change Myself</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ATCG.XYZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ATCG.XYZ">
+<meta property="og:url" content="http://atcg.xyz/page/4/index.html">
+<meta property="og:site_name" content="ATCG.XYZ">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ATCG.XYZ">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="ATCG.XYZ" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">ATCG.XYZ</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ATCG是我们骑行社的一面旗子，虽然已经下落不明，但它一定在远方</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/cycling">Cycling</a>
+        
+          <a class="main-nav-link" href="/football">足球</a>
+        
+          <a class="main-nav-link" href="/doudou">Doudou</a>
+        
+          <a class="main-nav-link" href="/段子">段子</a>
+        
+          <a class="main-nav-link" href="/Myself">Change Myself</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://atcg.xyz"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-一晃又是半年" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/08/13/一晃又是半年/" class="article-date">
+  <time datetime="2012-08-13T04:35:23.000Z" itemprop="datePublished">2012-08-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/08/13/一晃又是半年/">一晃又是半年</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候，连着吃了几次闭门羹，虽不痛不痒，但自然也不会再来敲门了。  然后跑去douban了，发了些帖子，贴了些照片。  心血来潮，又回来摸了一下伤疤，发现还是很有感觉。  这就是google</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2012/08/13/一晃又是半年/" data-id="ciofjl7x30016yg7tisme9km4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-awk的一些使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/04/01/awk的一些使用方法/" class="article-date">
+  <time datetime="2012-04-01T01:50:33.000Z" itemprop="datePublished">2012-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/01/awk的一些使用方法/">awk的一些使用方法</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>输出字符串长度：</p>
+<pre name="code" class="java">
+awk '{if(length($1)&gt;200)print}' 
+</pre>
+
+<p>去掉最后两行：</p>
+<pre name="code" class="java">awk 'NF-=2' 2C.txt  | le  </pre>
+
+<p>for语句与split语句：</p>
+<pre name="code" class="java">le rid_list.txt | awk -F\; '{for(i=1;i&lt;NF;++i){split($i,a,",");print a[1];}}' | le  </pre>
+
+<p>用分号分割需要转义：</p>
+<pre name="code" class="java">awk -F\; '{print $1}' rid_list.txt</pre>
+
+<p>第三列出现分隔符(分号)的次数小于10次的输出：</p>
+<pre name="code" class="java">awk '{if(gsub(/;/,"&amp;",$3)&lt;10) print}'</pre>
+
+<p>取出第5个字符开始的数字，并求平均值：</p>
+<pre name="code" class="java">cut -c 5-| awk '{sum+=$1}END{print sum/NR}'</pre>
+
+<p>产生随机数：</p>
+<pre name="code" class="java">echo ''|awk "BEGIN{srand($RANDOM)}{for (i=1;i&lt;=100;i++)printf \"%06d\n\",rand()*1000000}"</pre>
+
+<p>用逗号隔开：</p>
+<pre name="code" class="java">
+awk '$1==1{if(i++)printf ","$2;else printf $2}' text
+awk 'BEGIN{OFS=","}$1=$1' text
+awk '{if(!a[$1])a[$1]=$2;else{a[$1]=a[$1]","$2}}END{for(i in a)print i,a}' text 
+awk '{printf $2","}'  text
+</pre>
+
+<p>去除空行:</p>
+<pre name="code" class="java">awk NF  </pre>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2012/04/01/awk的一些使用方法/" data-id="ciofjl7w2000myg7tscw2urvz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hadoop的一些使用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/04/01/hadoop的一些使用方法/" class="article-date">
+  <time datetime="2012-04-01T01:49:12.000Z" itemprop="datePublished">2012-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/04/01/hadoop的一些使用方法/">hadoop的一些使用方法</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>命令行查看当前正在执行的job id:</p>
+<pre name="code" class="java">[hadoop@compute-63-9 ~]$ /hadoop/hadoop_home/bin/hadoop job -jt compute-63-0:9001 -list all |awk '{ if($2==1) print $1 }'
+job_201203311041_0041</pre>
+
+<p>设置副本数目</p>
+<pre name="code" class="java">hadoop fs -setrep [-R] [-w] &lt;副本個數&gt; &lt;HDFS檔案名稱&gt;</pre>
+
+<p>设置map输出压缩：</p>
+<pre name="code" class="java"> 
+  conf.set("mapred.compress.map.output", "true")
+  conf.set("mapred.output.compression.type", "BLOCK"); 
+  conf.set("mapred.map.output.compression.codec", "org.apache.hadoop.io.compress.GzipCodec");
+</pre>
+
+<p>存储写满了。</p>
+<pre name="code" class="java">org.apache.hadoop.util.DiskChecker$DiskErrorException: Could not find any valid local directory for taskTracker/jobcache/job_201108311619_0703/attempt_201108311619_0703_m_000076_0/output/spill0.out
+
+Error: java.io.IOException: No space left on device
+
+java.io.IOException: Task: attempt_201108311619_0703_r_000002_0 - The reduce copier failed</pre>
+
+<p>hadoop目的地启动distcp数据传输：</p>
+<pre name="code" class="java">hadoop distcp hdfs://172.30.4.50:9000/user/hadoop/lisk/mouse/str/ hdfs://hs14:9000/user/hadoop/gusc/new_contig
+或者
+hadoop distcp hdfs://172.30.4.50:9000/user/hadoop/lisk/mouse/id /user/hadoop/gusc
+</pre>
+
+<p>Map与Reduce之间的格式要注意，如果没写Map的输出格式，则默认按照Reduce的处理。如果Map和Reduce直接数据格式不一致，则需要指明：</p>
+<pre name="code" class="java">
+job.setMapOutputKeyClass(Class&lt;?&gt; theClass)
+job.setMapOutputValueClass(Class&lt;?&gt; theClass)
+job.setOutputKeyClass(Class&lt;?&gt; theClass)
+job.setOutputValueClass(Class&lt;?&gt; theClass)
+</pre>
+
+<p>Reducer的类型没对应上有时候并不会出错，得仔细检查。如下所示，这时候会调用默认的reducer来执行。</p>
+<pre name="code" class="java">  public static class Reduce extends Reducer&lt;LongWritable, Text, Text, Text&gt; {
+    public void reduce(Text key, Iterable&lt;Text&gt; values, Context context)
+        throws IOException, InterruptedException {
+        }
+  }</pre>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2012/04/01/hadoop的一些使用方法/" data-id="ciofjl7wg000uyg7tnxdqjty1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2011我最喜欢的两个东西" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/25/2011我最喜欢的两个东西/" class="article-date">
+  <time datetime="2012-02-25T23:16:43.000Z" itemprop="datePublished">2012-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/25/2011我最喜欢的两个东西/">2011我最喜欢的两个东西</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.豆瓣电台<br>2.Evernote</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2012/02/25/2011我最喜欢的两个东西/" data-id="ciofjl7u00001yg7t1poy63hr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-求医" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/02/25/求医/" class="article-date">
+  <time datetime="2012-02-25T19:39:17.000Z" itemprop="datePublished">2012-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/02/25/求医/">求医</a>
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我妈老说，我小时候体弱多病，差不多同龄的孩子在玩，我总是穿着干干净净的衣服在一旁看着。</p>
+<p>等到稍大的时候，大概是三四年级的样子，我爱上了看《足球小将》，喜欢上了踢足球，身体才开始慢慢的强壮起来，生病的时候也越来越少，很少去医院。</p>
+<p>有时候我肚子右侧，肋骨下方有时候会隐隐作痛。我觉得这种痛是比较奇怪的，于是趁着周末，我去了一趟北大医院做个检查，这就开始了我一天的求医之路。</p>
+<p>周末习惯性的睡个懒觉，起来都九点多了，想着检查不用吃早餐，十点左右就出门了。后来，路上我想起了上次去北大医院看牙科的时候，那个护士跟我说，如果你要拔牙你就应该早上六点多来排队挂号。好吧，那我就只能当今天去北大医院买张彩票吧。</p>
+<p>公交车两站路就到了。挂号的地方赫然地贴着:xx科挂号已满，yy科挂号已满…其实我压根就不知道去哪个科看病，来之前查找了一些相关的资料，猜测应该是内科，仔细看了一下，内科已满，纯属意料之中。想着既然来了，多少要有点收获，就在那里瞎转。后来看到大厅里面有一处不少人在排队，上面那地方写着简易门诊，其中一项是咨询，我想着这个正合我意，赶紧去取了简易门诊的挂号，用社保卡挂号现金费用一元。这个性价比实在太赞了，但我不太明白这一元钱为啥不能从社保卡扣呢？不过钱比较少，大家不关心，我也不在乎。</p>
+<p>医院内有好些护士身上斜挂着红色的条布，称为导医。简易门诊的队伍有点长，我去排队的时候专门去向导医问问，说我腹部右侧不舒服，能不能通过简易门诊得到我具体应该去哪个科看病，她说不行。我就跟她说那上面不是写着提供咨询的么？她说没有。我那一会立马就无语了。不过好在我来时查了些资料，知道那个地方有肾，胆囊，肝脏，肠。过一会就问她，我可能得结石或阑尾，那你知道我应该去哪个科看病么？她说去看外科，要去外科处挂号。我喜出望外，心想着还可以再去外科处再买一次彩票。</p>
+<p>外科处的挂号处也有不少排队，我又咨询了一下那里的导医，说我腹部右侧痛疼，她说挂胃肠外科，要排下午的号，而且这边也可以做CT，彩超之类的。我想着挺合算的，不能半途而废，于是挂了个胃肠外科下午的号。挂了号后已经快中午11点了，我心里还在想着我这个好像跟胃肠没太大关系，于是趁着有个病人刚从胃肠科出来，赶紧溜进去问医生，指着我那个位置说，这个病是在你这里看么？他抬头看着我问了句，上面还是下面？我说上面。他说去肝胆外科。我心想，医生就是医生，这诊断斩钉截铁的。</p>
+<p>我很庆幸啊。然后出来，故技重施，跟那个肝胆外科的医生说了我的情况，并且强调说是隔壁的医生让我来找你们科的。他说好，让我去外面换一个号。不过，这次真的是中六合彩了，我前面只有一人。前面那个哥们在和医生扯皮，貌似是不太相信那个医生的结论。那个医生就说，你可以去其他医院看看别的医生怎么说的，甚至做个飞机去上海啥啥的…最后那个哥们只好打趣地说，我第一次来医院没想到…还是那句话，医生就是医生，真牛。</p>
+<p>等了一会我就进去和医生会诊了，没说两句，他就让我先去做个彩超。到了做彩超的地方，又是排队。那个护士说，做彩超又只能到下午两点后了，而且中午只能喝白开水不能吃东西。没办法了，说啥是啥了。在哪里溜达了一会，我就走回家了。要饿也在家饿啊。</p>
+<p>回到家约12点，中午不能吃饭，陪着UU出去散步，回来后碰巧有全明星新秀赛，让我的时间过得快了不少。</p>
+<p>下午两点多回到医院，等了一会就到我了。彩超这个玩意就是一个探头，一台主机和一个软件，扫描一下内脏器官。以前上大学的时候去参加过东芝的类似产品展销的兼职，只要有人要过来看这个产品，我就要做人体模特，而那次兼职收获最大的是知道我肾脏很健康。这次肝胆胰脾检查使用的是飞利浦的机器，检查的时候突然想起来去年下半年体检的时候刚检查过这个玩意，五分钟后，检查完毕，医生说没有任何问题。于是回到主治医生那里，医生说很好，没有问题。我又无语了。然后，他说可以去消化内科那看看，那个位置还有十二指肠啥的…我说现在内科没办法挂号了，你有什么办法？他说他也没办法了，明天周末可以早点来。</p>
+<p>算了一笔账，一台机器最贵要一百万，一天最少也能有五十人，一天就六千七百五十，一年左右就两百多万了。当然，医保的钱，我们都不会认为那是钱，就只能随便让他们捣腾了。</p>
+<p>我又不甘心，来到内科处，果然没法挂号了。从护士mm那里得知，医生那边签字可能可以拿到挂号。于是，又一把故技重施，这女医生很好很善良，我顺利的拿到挂号，然后开始了漫长的等待。吃了面包和维他奶做午饭，然后在椅子上听了会英语，居然睡了一觉。四点多的时候，有个大妈开始闹起来了，骂医院。她说她早上八点多过来，等了一天都没看上病。庆幸的是，她闹了没一会立马就轮到我了。这是个正高的主治医生，之前看外科的那位也是，正高的挂号费都是七元，普通的好像是五元，不过对于使用社保卡来说都一样，全场一元。她问了些情况，也做了一些检查，然后开始写病例。这病例是她专门叫我去买的，也是一元。我估计她不太会电脑打字，当然也有可能是不想让大家知道她诊断书的内容或无法舍弃她那无法阅读的书法艺术。总之，最后的结果是她也不确定什么问题，需要进一步检查，说下周复诊前做个大小便测试。然后开了个胃药给我，说也有可能是十二指肠溃疡。</p>
+<p>而后我下楼准备去交钱取药，天杀的社保局居然罢工了，只能给现金。看了药单上一个三十元的药，想着自己之前还有一些储备，于是便走出了医院。</p>
+<p>回家的路上，看着路边有人卖二手自行车的Duke 600，居然要一千五啊，没买。然后路边有人卖很大很大的江西脐橙，说一个一斤多，十元五个，我觉得甚是划算，买了五个回家，路过金鱼档，花了五元买了一条黑的一条红的，比较大，档主说比较好养。最后，再买了两块钱的苗族土家饼填饱肚子。</p>
+<p>于是，为了这个目前尚未得知结果的病折腾了一天后，我发现我其实跟医生交流的时间不超过二十分钟，而且我已经是耍了一下小聪明，算是获得了比较多的机会，我不知道那些老实巴交的其他人会不会折腾了一天后无功而返的。不过想想那句话，现在看得起病的都是有钱有关系的人，从医院的停车场来看，确实不一般。奔驰宝马奥迪就不在话了，好多的军牌，劳斯莱斯也来凑热闹了。另外，我记得有个排队缴费的妈妈在打电话时说，早上过来号都没了，后来打了个电话给医院的同学，一早上全都检查完了。</p>
+<p>回来，秤了一下橙子，四斤八两。无可奈何。希望那两金鱼能活长点时间。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://atcg.xyz/2012/02/25/求医/" data-id="ciofjl7y50025yg7tffx9x12g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annual-Review/">Annual Review</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Doudou/">Doudou</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Family/">Family</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Movie/">Movie</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travel/">Travel</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cgi/">cgi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/足球/">足球</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Annual-Review/" style="font-size: 20px;">Annual Review</a> <a href="/tags/Book/" style="font-size: 13.33px;">Book</a> <a href="/tags/Doudou/" style="font-size: 13.33px;">Doudou</a> <a href="/tags/Family/" style="font-size: 13.33px;">Family</a> <a href="/tags/Movie/" style="font-size: 16.67px;">Movie</a> <a href="/tags/Travel/" style="font-size: 13.33px;">Travel</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/cgi/" style="font-size: 10px;">cgi</a> <a href="/tags/足球/" style="font-size: 10px;">足球</a> <a href="/tags/骑行/" style="font-size: 10px;">骑行</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">April 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/09/">September 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/06/">June 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/05/">May 2011</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/20/Diamond-or-Code/">Want Diamond or Code ?</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/Interesting-Blogs/">Interesting Blogs</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/16/迎着风的2015/">迎着风的2015</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/02/新西兰之行/">新西兰之行</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/06/Fernando-Montano/">Fernando Montaño</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Guti Gu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/cycling" class="mobile-nav-link">Cycling</a>
+  
+    <a href="/football" class="mobile-nav-link">足球</a>
+  
+    <a href="/doudou" class="mobile-nav-link">Doudou</a>
+  
+    <a href="/段子" class="mobile-nav-link">段子</a>
+  
+    <a href="/Myself" class="mobile-nav-link">Change Myself</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

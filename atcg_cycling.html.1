@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="echarts.min.js"></script>
+       <script src="map/js/china.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title : {
+        text: '中国版图',
+        subtext: '一略而过也算征服',
+        left: 'center'
+    },
+    tooltip : {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data:['周老师','韩总','山林','王教头','剑圣','沙头','沛志','阿昌','张弛','小黑']
+    },
+    visualMap: {
+        min: 0,
+        max: 2500,
+        left: 'left',
+        top: 'bottom',
+        text:['高','低'],           // 文本，默认为数值文本
+        calculable : true
+    },
+    toolbox: {
+        show: true,
+        orient : 'vertical',
+        left: 'right',
+        top: 'center',
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            name: '周老师',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '台湾',value: 1000}
+
+            ]
+        },
+        {
+            name: '山林',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '西藏',value: 1000},
+                {name: '四川',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '台湾',value: 1000}
+            ]
+        },
+        {
+            name: '阿昌',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 2012},
+                {name: '青海',value: 2012},
+                {name: '台湾',value: 2013},
+                {name: '陕西',value: 2012},
+                {name: '广西',value: 2013}
+            ]
+        },
+        {
+            name: '张弛',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '台湾',value: 1000}
+            ]
+        },
+        {
+            name: '沛志',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '北京',value: 1000}
+            ]
+        },
+        {
+            name: '剑圣',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '广西',value: 1000},
+                {name: '陕西',value: 1000},
+                {name: '青海',value: 1000},
+                {name: '湖南',value: 1000}
+            ]
+        },
+        {
+            name: '王教头',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '青海',value: 1000}
+            ]
+        },
+        {
+            name: '沙头',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '青海',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '台湾',value: 1000}
+            ]
+        },
+        {
+            name: '韩总',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '海南',value: 1000},
+                {name: '北京',value: 1000}
+            ]
+        },
+        {
+            name: '小黑',
+            type: 'map',
+            mapType: 'china',
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                {name: '广东',value: 1000},
+                {name: '台湾',value: 1000},
+                {name: '北京',value: 1000}
+            ]
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    var startTime = +new Date();
+    myChart.setOption(option, true);
+    var endTime = +new Date();
+    var updateTime = endTime - startTime;
+    console.log("Time used:", updateTime);
+}
+       </script>
+   </body>
+</html>
